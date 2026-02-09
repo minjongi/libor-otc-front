@@ -108,7 +108,7 @@ function Navbar() {
       >
         <div className="container mw-1680">
           <Link className="navbar-brand" href="/">
-            <Image src="/images/logo.svg" alt="logo" width={127} height={50} />
+            <Image src="/images/LIBOR.jpg" alt="logo" width={127} height={50} />
           </Link>
 
           <div className="collapse navbar-collapse">
@@ -118,11 +118,10 @@ function Navbar() {
           {/* Others Options */}
           <div className="others-options d-flex align-items-center">
             <div className="d-flex align-items-center info">
-              <Link href="/faqs">Help</Link>
-              <Link href="/login">Log In</Link>
+              <Link href="/login">로그인</Link>
             </div>
             <Link href="/register" className="btn d-none d-sm-inline-block">
-              Register
+              회원가입
             </Link>
             <button
               type="button"

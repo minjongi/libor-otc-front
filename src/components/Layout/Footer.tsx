@@ -115,7 +115,7 @@ const Footer = () => {
                 <div className="col-lg-3 col-sm-6">
                   <Link href="/" className="footer-logo">
                     <Image
-                      src="/images/logo.svg"
+                      src="/images/LIBOR.jpg"
                       alt="logo"
                       width={127}
                       height={50}
