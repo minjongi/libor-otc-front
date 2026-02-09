@@ -19,9 +19,9 @@ const FaqContent = () => {
   const faqItems: FAQItem[] = [
     {
       id: 1,
-      question: "How long does a transfer take with Expa?",
+      question: "How long does a transfer take with Libor?",
       answer:
-        "Transfer times vary depending on the destination country and payment method. Most transfers are completed within minutes, but some can take 1-2 business days. You can track your transfer in real-time through your Expa account.",
+        "Transfer times vary depending on the destination country and payment method. Most transfers are completed within minutes, but some can take 1-2 business days. You can track your transfer in real-time through your Libor account.",
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ const FaqContent = () => {
     },
     {
       id: 5,
-      question: "Is my money safe with Expa?",
+      question: "Is my money safe with Libor?",
       answer:
         "We repair a wide range of appliances including refrigerators washing machines dryers dishwashers ovens microwaves air conditioners and more. If you are unsure whether we service your specific appliance feel free to contact",
     },
@@ -84,13 +84,9 @@ const FaqContent = () => {
             <div className="col-lg-8">
               <div className="faq-content">
                 <div className="mb-40">
-                  <span className="top-title mb-lg-3 mb-2">
-                    Frequently Asked Questions
-                  </span>
-                  <h2 className="main-title style-two ms-0">
-                    <span>Quick answers</span> to common questions about Expa
-                    services
-                  </h2>
+                  <h1 className="main-title style-two ms-0">
+                    자주 묻는 질문
+                  </h1>
                 </div>
 
                 <div className="accordion faq-wrapper">

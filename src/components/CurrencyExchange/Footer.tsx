@@ -67,7 +67,7 @@ const Footer = () => {
                     height={50}
                   />
                   <Image
-                    src="/images/logo.svg"
+                    src="/images/LIBOR.jpg"
                     className="d-none"
                     alt="logo"
                     width={127}

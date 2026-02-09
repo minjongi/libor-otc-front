@@ -11,9 +11,9 @@ export default function Page() {
       <PageBanner
         homePageUrl="/"
         homePageText="Home"
-        pageTitle="Login"
+        pageTitle="로그인"
         phoneNumber="+44 (0506) 258 7485"
-        email="information@expa.com"
+        email="support24@libor-otc.com"
       />
 
       <LoginForm />

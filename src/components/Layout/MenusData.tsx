@@ -8,11 +8,11 @@ export const menusData = [
     ],
   },
   {
-    title: "Services",
+    title: "거래",
     dropdown: [
-      { title: "Services", href: "/services/" },
-      { title: "Services Details", href: "/services/details/" },
-      { title: "Pricing", href: "/pricing/" },
+      { title: "간편 등록", href: "/services/" },
+      { title: "P2P 거래", href: "/services/details/" },
+      { title: "내역", href: "/pricing/" },
       { title: "Personal", href: "/personal/" },
       { title: "Business", href: "/business/" },
       { title: "Send Money", href: "/send-money/" },
@@ -34,26 +34,17 @@ export const menusData = [
     ],
   },
   {
-    title: "Pages",
+    title: "고객센터",
     dropdown: [
-      { title: "About Us", href: "/about-us/" },
-      
+      { title: "공지사항", href: "/about-us/" },
       { title: "FAQ", href: "/faqs/" },
-      { title: "Team", href: "/team/" },
+      { title: "문의", href: "/team/" },
+      { title: "Contact Us", href: "/contact-us/" },
       { title: "Testimonials", href: "/testimonials/" },
       { title: "Careers", href: "/careers/" },
       { title: "Apply Now", href: "/apply-now/" },
-   
-      {
-        title: "Authentication",
-        dropdown: [
-          { title: "Login", href: "/login/" },
-          { title: "Register", href: "/register/" }, 
-        ],
-      },
       { title: "Privacy Policy", href: "/privacy-policy/" },
-      { title: "Terms & Conditions", href: "/terms-conditions/" },
-      { title: "Contact Us", href: "/contact-us/" },
+      { title: "Terms & Conditions", href: "/terms-conditions/" }
     ],
   },
   {

@@ -8,19 +8,19 @@ const LoginForm = () => {
         <div className="container">
           <div className="my-account-form">
             <div className="text-center mb-4">
-              <h3>Login in</h3>
+              <h3>로그인</h3>
               <p>
-                Don&apos;t have an account? <Link href="/register">Register</Link>
+                아직 회원이 아니신가요? <Link href="/register">회원가입</Link>
               </p>
             </div>
 
             <form>
               <div className="currency-input position-relative z-1">
-                <label className="label">Your Name</label>
+                <label className="label">아이디</label>
                 <input
                   type="text"
                   className="form-control"
-                  defaultValue="Ricky Hudson"
+                  placeholder="아이디를 입력해주세요."
                 />
               </div>
               <div className="currency-input position-relative z-1">
@@ -28,11 +28,11 @@ const LoginForm = () => {
                 <input
                   type="password"
                   className="form-control"
-                  defaultValue="************"
+                  placeholder="비밀번호를 입력해주세요.."
                 />
               </div>
-              <button type="submit" className="btn btn-secondary w-100">
-                Log in
+              <button type="submit" className="btn btn-secondary w-100 mt-4">
+                로그인
               </button>
             </form>
 
@@ -40,29 +40,8 @@ const LoginForm = () => {
               href="/forgot-password"
               className="text-decoration-none my-4 d-block text-center"
             >
-              Forgot password?
+              비밀번호를 잊으셨나요?
             </Link>
-
-            <p className="fw-medium text-secondary mb-4 login">
-              <span>Or login with</span>
-            </p>
-
-            <div className="d-sm-flex align-items-center justify-content-between gap-10">
-              <a
-                href="https://www.google.com/"
-                target="_blank"
-                className="btn w-100 mb-2 mb-sm-0"
-              >
-                Log in With Google
-              </a>
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                className="btn w-100"
-              >
-                Log in With Facebook
-              </a>
-            </div>
           </div>
         </div>
       </div>

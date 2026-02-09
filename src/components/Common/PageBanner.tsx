@@ -5,8 +5,8 @@ interface Props {
   homePageText: string;
   homePageUrl: string;
   pageTitle: string;
-  phoneNumber: string;
-  email: string;
+  phoneNumber?: string;
+  email?: string;
 }
 
 function PageBanner({

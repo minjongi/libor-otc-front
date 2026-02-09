@@ -123,14 +123,13 @@ function Navbar() {
           {/* Others Options */}
           <div className="others-options d-flex align-items-center style-two">
             <div className="d-flex align-items-center info">
-              <Link href="/faqs">Help</Link>
-              <Link href="/login">Log In</Link>
+              <Link href="/login">로그인</Link>
             </div>
             <Link
               href="/register"
               className="btn d-none d-sm-inline-block btn-secondary"
             >
-              Register
+              회원가입
             </Link>
             <button
               type="button"
