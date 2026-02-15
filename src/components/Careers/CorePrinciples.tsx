@@ -47,7 +47,7 @@ const CorePrinciples = () => {
       <div className="works-area ptb-120 overflow-hidden">
         <div className="container mw-1680">
           <h2 className="main-title style-two text-center mb-40 mx-auto">
-            These principles guide everything we do at Expa
+            These principles guide everything we do at Libor
           </h2>
 
           <div className="row g-4">

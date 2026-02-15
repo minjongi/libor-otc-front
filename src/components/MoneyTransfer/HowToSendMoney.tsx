@@ -66,7 +66,7 @@ const HowToSendMoney = () => {
             </div>
             <div className="col-lg-8">
               <h2 className="main-title style-two mw-825">
-                <span>Sending money</span> abroad with Expa is fast, secure, and
+                <span>Sending money</span> abroad with Libor is fast, secure, and
                 hassle-free
               </h2>
             </div>

@@ -158,7 +158,7 @@ const HeroBanner = () => {
 
             <div className="banner-info">
               <p>
-                Expa provides institutional-grade foreign exchange services to
+                Libor provides institutional-grade foreign exchange services to
                 businesses and individuals with transparent pricing, deep
                 liquidity, and cutting-edge technology.
               </p>

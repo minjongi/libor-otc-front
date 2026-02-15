@@ -24,7 +24,7 @@ const BlogPosts = () => {
         month: "Sep",
       },
       author: "Emma Rodriguez",
-      title: "Expa Launches New Mobile App with Enhanced Features",
+      title: "Libor Launches New Mobile App with Enhanced Features",
       description:
         "Discover the new features in our updated mobile application, including rate alerts, faster transfers, and improved security.",
       link: "/blog/details/",

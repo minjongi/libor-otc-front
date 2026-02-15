@@ -20,7 +20,7 @@ const WhatOurCustomersSay = () => {
       role: "Sends to Mexico",
       image: "/images/user5.jpg",
       testimonial:
-        "I've tried several money transfer services, but Expa stands out for its transparency. No hidden fees, and I always know exactly how much will be received on the other end.",
+        "I've tried several money transfer services, but Libor stands out for its transparency. No hidden fees, and I always know exactly how much will be received on the other end.",
       rating: 5,
     },
     {
@@ -29,7 +29,7 @@ const WhatOurCustomersSay = () => {
       role: "Business Owner",
       image: "/images/user6.jpg",
       testimonial:
-        "I run a small import business and use Expa for all my international payments. The business dashboard makes it easy to track expenses and manage multiple recipients.",
+        "I run a small import business and use Libor for all my international payments. The business dashboard makes it easy to track expenses and manage multiple recipients.",
       rating: 5,
     },
     {
@@ -38,7 +38,7 @@ const WhatOurCustomersSay = () => {
       role: "Sends to Philippines",
       image: "/images/user7.jpg",
       testimonial:
-        "I was hesitant to try online money transfer, but Expa made the process so simple. Their customer support team guided me through my first transfer to the Philippines.",
+        "I was hesitant to try online money transfer, but Libor made the process so simple. Their customer support team guided me through my first transfer to the Philippines.",
       rating: 5,
     },
     {
@@ -47,7 +47,7 @@ const WhatOurCustomersSay = () => {
       role: "Freelance Designer",
       image: "/images/user8.jpg",
       testimonial:
-        "As a freelancer working with international clients, Expa makes it easy to receive payments from around the world. The app is intuitive and transfers are always fast.",
+        "As a freelancer working with international clients, Libor makes it easy to receive payments from around the world. The app is intuitive and transfers are always fast.",
       rating: 4,
     },
     {
@@ -56,7 +56,7 @@ const WhatOurCustomersSay = () => {
       role: "Sends to Spain",
       image: "/images/user9.jpg",
       testimonial:
-        "I've been using Expa for over a year to send money to my family in Spain. The low fees and great exchange rates save me hundreds of dollars compared to my bank.",
+        "I've been using Libor for over a year to send money to my family in Spain. The low fees and great exchange rates save me hundreds of dollars compared to my bank.",
       rating: 5,
     },
   ];

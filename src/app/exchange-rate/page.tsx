@@ -14,7 +14,7 @@ export default function Page() {
         homePageText="Home"
         pageTitle="Exchange Rates"
         phoneNumber="+44 (0506) 258 7485"
-        email="information@expa.com"
+        email="information@libor.com"
       />
 
       <LiveExchangeRates />

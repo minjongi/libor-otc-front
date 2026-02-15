@@ -65,7 +65,7 @@ const HowCurrencyExchangeWorks = () => {
         <div className="container mw-1680">
           <div className="d-flex flex-wrap justify-content-between align-items-end mb-40 gap-10">
             <h2 className="main-title ms-0 mb-0 fw-semibold">
-              How Expa Currency Exchange Works
+              How Libor Currency Exchange Works
             </h2>
             <p className="description">
               Our streamlined process makes international currency exchange

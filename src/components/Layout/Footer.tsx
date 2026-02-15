@@ -13,7 +13,7 @@ const Footer = () => {
     },
     contact: {
       phone: "+44 (0506) 258 7485",
-      email: "information@expa.com",
+      email: "information@libor.com",
       address: "123 Financial Street, London, EC2A 4AB, United Kingdom",
     },
     companyLinks: [
@@ -53,7 +53,7 @@ const Footer = () => {
       },
     ],
     copyright: {
-      company: "Expa",
+      company: "Libor",
       author: "EnvyTheme",
       authorUrl: "https://envytheme.com/",
     },
@@ -115,9 +115,9 @@ const Footer = () => {
                 <div className="col-lg-3 col-sm-6">
                   <Link href="/" className="footer-logo">
                     <Image
-                      src="/images/LIBOR.jpg"
+                      src="/images/libor-logo.png"
                       alt="logo"
-                      width={127}
+                      width={232}
                       height={50}
                     />
                   </Link>

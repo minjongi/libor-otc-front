@@ -30,16 +30,16 @@ const ContactForm = () => {
                   <div>
                     <h3>Email Us</h3>
                     <a
-                      href="mailto:info@expa.com"
+                      href="mailto:info@libor.com"
                       className="text-decoration-none"
                     >
-                      info@expa.com
+                      info@libor.com
                     </a>
                     <a
-                      href="mailto:support@expa.com"
+                      href="mailto:support@libor.com"
                       className="text-decoration-none"
                     >
-                      support@expa.com
+                      support@libor.com
                     </a>
                     <span className="d-block">We respond within 24 hours</span>
                   </div>

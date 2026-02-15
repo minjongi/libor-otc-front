@@ -7,7 +7,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 const LovedByCustomersWorldwide = ({
   sectionTitle = "Loved by Customers Worldwide",
-  sectionDescription = "Join millions of users who have transformed their financial experience with Expa",
+  sectionDescription = "Join millions of users who have transformed their financial experience with Libor",
   topTitleImage = {
     src: "/images/top-title-shape.png",
     alt: "top-title-shape",
