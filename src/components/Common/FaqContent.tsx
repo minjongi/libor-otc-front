@@ -16,9 +16,9 @@ const FaqContent = () => {
   const faqData: FAQItem[] = [
     {
       id: 1,
-      question: "How do I create a Expa account?",
+      question: "How do I create a Libor account?",
       answer:
-        "Creating a Expa account is quick and simple. Just click 'Sign Up', enter your basic details, and verify your email or phone number. Once verified, you can add a payment method and start sending or receiving money instantly.",
+        "Creating a Libor account is quick and simple. Just click 'Sign Up', enter your basic details, and verify your email or phone number. Once verified, you can add a payment method and start sending or receiving money instantly.",
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ const FaqContent = () => {
     },
     {
       id: 3,
-      question: "What are the fees for using Expa?",
+      question: "What are the fees for using Libor?",
       answer:
         "Expa offers transparent, competitive fees. Most transfers have a small fixed fee plus a percentage of the amount sent. Premium accounts enjoy reduced fees. We always display the exact fee before you confirm your transfer, so there are no surprises.",
     },

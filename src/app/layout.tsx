@@ -18,9 +18,9 @@ const interSans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Expa - React Nextjs Currency Exchange & Money Transfer Template",
+  title: "Libor - Crypto Currency Exchange",
   description:
-    "Expa is a modern React and Next.js template designed for currency exchange and money transfer websites. It offers a clean design, fast performance, and all the essential features to build secure and professional fintech platforms.",
+    "Libor is a modern React and Next.js template designed for currency exchange and money transfer websites. It offers a clean design, fast performance, and all the essential features to build secure and professional fintech platforms.",
 };
 
 export default function RootLayout({

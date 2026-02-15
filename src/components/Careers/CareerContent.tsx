@@ -34,7 +34,7 @@ const CareerContent = () => {
       id: 2,
       title: "Customer Support Specialist",
       description:
-        "Provide exceptional support to Expa users, resolving queries related to transfers, exchange rates, and account management.",
+        "Provide exceptional support to Libor users, resolving queries related to transfers, exchange rates, and account management.",
       location: "United Kingdom - London",
       employmentType: "Full-time / Part-time",
       responsibilities: [
@@ -48,7 +48,7 @@ const CareerContent = () => {
       id: 3,
       title: "Account Manager",
       description:
-        "Manage and nurture relationships with Expa's business and individual clients, ensuring their needs are met and helping them maximize the value of our services.",
+        "Manage and nurture relationships with Libor's business and individual clients, ensuring their needs are met and helping them maximize the value of our services.",
       location: "United States - Orlando",
       employmentType: "Full-time / Part-time",
       responsibilities: [

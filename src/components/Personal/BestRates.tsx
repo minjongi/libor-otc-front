@@ -26,7 +26,7 @@ const BestRates = () => {
   // Static content data (can be made dynamic if needed)
   const contentData = {
     title: "Best rates, right when you need them",
-    description: "Send money abroad, split bills with friends, and manage your finances with ease. Expa makes personal payments simple, secure, and affordable.",
+    description: "Send money abroad, split bills with friends, and manage your finances with ease. Libor makes personal payments simple, secure, and affordable.",
     buttonText: "Create An Account",
     buttonLink: "/register"
   };

@@ -408,7 +408,7 @@ const MoneyTransferForm = () => {
                   </li>
                 </ul>
 
-                <p>Your money is protected with bank-level security and encryption. Expa is fully regulated and compliant with international financial regulations.</p>
+                <p>Your money is protected with bank-level security and encryption. Libor is fully regulated and compliant with international financial regulations.</p>
               </Card.Body>
             </Card>
           </Col>

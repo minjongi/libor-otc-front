@@ -41,7 +41,7 @@ const ApplicationForm = () => {
             <div className="col-lg-5">
               <div className="build-your-career-content">
                 <h2 className="main-title style-two mb-4">
-                  Start your journey with Expa
+                  Start your journey with Libor
                 </h2>
                 <h3 className="fw-semibold fs-24 mb-3">Our Hiring Process</h3>
                 <p className="mb-4">

@@ -35,9 +35,9 @@ const WhyChooseUs = () => {
 
   // Dynamic content data
   const contentData = {
-    title: "Why choose Expa for business",
+    title: "Why choose Libor for business",
     description:
-      "Empower your business with fast, secure, and cost-effective global payment solutions. Expa helps you save more, move money faster, and operate confidently across borders.",
+      "Empower your business with fast, secure, and cost-effective global payment solutions. Libor helps you save more, move money faster, and operate confidently across borders.",
   };
 
   return (

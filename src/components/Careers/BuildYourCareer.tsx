@@ -10,7 +10,7 @@ const BuildYourCareer = () => {
           <div className="row align-items-center g-4">
             <div className="col-lg-5">
               <h2 className="main-title style-two">
-                Build Your Career at Expa
+                Build Your Career at Libor
               </h2>
               <div className="build-your-career-inner">
                 <p>

@@ -184,13 +184,13 @@ function MobileMenuModal({ showMobileMenu, onClose }: MobileMenuModalProps) {
       >
         <div className="offcanvas-header">
           <Link href="/" className="logo d-inline-block">
-            <Image src="/images/LIBOR.jpg" alt="logo" width={100} height={39} />
+            <Image src="/images/libor-logo.png" alt="logo" width={181} height={39} />
           </Link>
           <Link href="/" className="logo d-none">
             <Image
-              src="/images/LIBOR.jpg"
+              src="/images/libor-logo.png"
               alt="logo"
-              width={100}
+              width={181}
               height={39}
             />
           </Link>

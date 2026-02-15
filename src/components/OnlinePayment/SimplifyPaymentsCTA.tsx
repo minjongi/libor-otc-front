@@ -19,7 +19,7 @@ const SimplifyPaymentsCTA = () => {
               </h2>
 
               <p className="text-secondary">
-                Join millions who trust Expa with their money. Send, receive,
+                Join millions who trust Libor with their money. Send, receive,
                 and manage your finances with ease and security
               </p>
 
@@ -62,9 +62,9 @@ const SimplifyPaymentsCTA = () => {
                   <div className="col-lg-3 col-sm-6">
                     <Link href="/" className="footer-logo">
                       <Image
-                        src="/images/LIBOR.jpg"
+                        src="/images/libor-logo.png"
                         alt="logo"
-                        width={127}
+                        width={232}
                         height={50}
                       />
                     </Link>
@@ -86,10 +86,10 @@ const SimplifyPaymentsCTA = () => {
                     <div className="info">
                       <span className="d-block mb-1">Email</span>
                       <a
-                        href="mailto:information@expa.com"
+                        href="mailto:information@libor.com"
                         className="text-decoration-none text-primary"
                       >
-                        information@expa.com
+                        information@libor.com
                       </a>
                     </div>
                   </div>

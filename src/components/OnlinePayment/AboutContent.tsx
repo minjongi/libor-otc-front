@@ -14,7 +14,7 @@ const AboutContent = () => {
               width={14}
               height={17}
             />
-            About Expa
+            About Libor
           </span>
           <h2 className="main-title style-two mw-1208 ms-0">
             We&apos;re building the future of global payments, making financial
@@ -39,7 +39,7 @@ const AboutContent = () => {
             <div className="col-lg-7">
               <div className="about-content-three">
                 <p>
-                  Expa is a modern online payment platform designed to make
+                  Libor is a modern online payment platform designed to make
                   global money transfers simple, safe, and affordable. We
                   empower individuals and businesses to send, receive, and
                   manage money seamlessly across borders with complete

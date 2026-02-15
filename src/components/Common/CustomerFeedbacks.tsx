@@ -21,7 +21,7 @@ const CustomerFeedbacks = () => {
       name: "Sarah Johnson",
       role: "Freelance Designer",
       content:
-        "I've been using Expa for over a year now to receive payments from international clients. The exchange rates are fantastic and transfers are always fast and reliable.",
+        "I've been using Libor for over a year now to receive payments from international clients. The exchange rates are fantastic and transfers are always fast and reliable.",
       rating: 5,
     },
     {
@@ -29,7 +29,7 @@ const CustomerFeedbacks = () => {
       name: "Michael Chen",
       role: "E-commerce Manager",
       content:
-        "As an online retailer, we need to make frequent international payments. Expa has simplified our process and saved us thousands in fees compared to traditional banks.",
+        "As an online retailer, we need to make frequent international payments. Libor has simplified our process and saved us thousands in fees compared to traditional banks.",
       rating: 5,
     },
     {

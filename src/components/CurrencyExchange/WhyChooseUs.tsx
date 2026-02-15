@@ -67,7 +67,7 @@ const WhyChooseUs = () => {
             <div className="col-xl-7">
               <div className="why-choose-content mb-40">
                 <h2 className="main-title mb-3 mb-sm-0 mw-648 ms-0 fw-semibold">
-                  Why Choose Expa?
+                  Why Choose Libor?
                 </h2>
                 <p className="description ms-auto">
                   Discover why thousands of individuals and businesses trust
