@@ -35,39 +35,25 @@ interface ExchangeRates {
 }
 
 const CurrencyConverter = () => {
-  // Currency data
+
   const currencies: Currency[] = [
-    { code: "USD", name: "USA", flag: "/images/flags/united-states.png" },
-    { code: "EUR", name: "EUR", flag: "/images/flags/round.png" },
-    { code: "GBP", name: "GBP", flag: "/images/flags/united-kingdom.png" },
-    { code: "JPY", name: "JPY", flag: "/images/flags/japan.png" },
-    { code: "AUD", name: "AUD", flag: "/images/flags/australia.png" },
-    { code: "CNY", name: "CNY", flag: "/images/flags/china.png" },
-    { code: "INR", name: "INR", flag: "/images/flags/india.png" },
-    { code: "BRL", name: "BRL", flag: "/images/flags/brazil-flag.png" },
-    { code: "ZAR", name: "ZAR", flag: "/images/flags/south-africa.png" },
-    { code: "MXN", name: "MXN", flag: "/images/flags/mexico.png" },
-    {
-      code: "AED",
-      name: "AED",
-      flag: "/images/flags/united-arab-emirates.png",
-    },
-    { code: "SAR", name: "SAR", flag: "/images/flags/saudi-arabia.png" },
-    { code: "CHF", name: "CHF", flag: "/images/flags/switzerland.png" },
-    { code: "SGD", name: "SGD", flag: "/images/flags/singapore.png" },
+    { code: "BTC", name: "BTC", flag: "/images/coin/bitcoin-btc-logo.png" },
+    { code: "XRP", name: "XRP", flag: "/images/coin/xrp-xrp.png" },
+    { code: "USDT", name: "USDT", flag: "/images/coin/tether-usdt-logo.png" },
+    { code: "ETH", name: "ETH", flag: "/images/coin/ethereum-logo.png" },
   ];
 
   // Receive methods
   const receiveMethods: string[] = [
-    "Bank Transfer",
-    "Paypal Transfer",
-    "Payoneer Transfer",
-    "Wise Transfer",
+    "무통장 입금",
+    "옵션1",
+    "옵션2",
+    "옵션3",
   ];
 
   // State management
   const [formData, setFormData] = useState<FormData>({
-    sendAmount: 1000,
+    sendAmount: 1,
     fromCurrency: currencies[0],
     toCurrency: currencies[1],
     receiveMethod: receiveMethods[0],
@@ -79,22 +65,13 @@ const CurrencyConverter = () => {
   const calculateConversion = useCallback((): void => {
     // Mock conversion logic - replace with actual API call
     const baseRates: ExchangeRates = {
-      USD: 1,
-      EUR: 0.915,
-      GBP: 0.79,
-      JPY: 148.5,
-      AUD: 1.52,
-      CNY: 7.23,
-      INR: 83.12,
-      BRL: 4.95,
-      ZAR: 18.75,
-      MXN: 17.23,
-      AED: 3.67,
-      SAR: 3.75,
-      CHF: 0.88,
-      SGD: 1.35,
+      BTC: 131415261,
+      XRP: 3213,
+      USDT: 1450,
+      ETH: 3241132,
     };
 
+    // TODO 계산로직 수정
     const fromRate = baseRates[formData.fromCurrency.code] || 1;
     const toRate = baseRates[formData.toCurrency.code] || 1;
 
@@ -203,18 +180,15 @@ const CurrencyConverter = () => {
     <>
       <form className="currency-converter-form style-two">
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <h3 className="mb-0">Currency Converter</h3>
-          <span className="text-white">
-            <span className="text-primary fs-18 fw-semibold">Live</span> Rates
-          </span>
+          <h3 className="mb-0">간편 등록</h3>
         </div>
 
         {/* Send Currency */}
         <div className="currency-input position-relative mb-3">
-          <label className="label z-1">Your send</label>
+          <label className="label z-1">수량</label>
           <div className="position-relative">
             <Form.Control
-              type="number"
+              type="text"
               value={formData.sendAmount}
               onChange={handleAmountChange}
               className="flex-grow-1"
@@ -254,19 +228,11 @@ const CurrencyConverter = () => {
               </Dropdown.Menu>
             </Dropdown>
           </div>
-
-          <button
-            type="button"
-            className="btn rounded-pill converter-btn"
-            onClick={handleSwapCurrencies}
-          >
-            <i className="ri-arrow-left-right-line"></i>
-          </button>
         </div>
 
         {/* Receive Currency */}
         <div className="currency-input position-relative mb-3">
-          <label className="label z-1">Recipient gets</label>
+          <label className="label z-1">가격</label>
           <div className="d-flex align-items-center gap-2">
             <Form.Control
               type="text"
@@ -274,42 +240,12 @@ const CurrencyConverter = () => {
               readOnly
               className="flex-grow-1 bg-light"
             />
-
-            <Dropdown className="country-dropdown">
-              <Dropdown.Toggle
-                as={CurrencyToggle}
-                currency={formData.toCurrency}
-              >
-                {formData.convertedAmount}
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu className="w-100">
-                {currencies.map((currency) => (
-                  <Dropdown.Item
-                    key={currency.code}
-                    onClick={() => handleCurrencySelect(currency, "toCurrency")}
-                    className="d-flex align-items-center justify-content-between"
-                  >
-                    <span className="d-flex align-items-center gap-2">
-                      <Image
-                        src={currency.flag}
-                        alt={currency.code}
-                        width={20}
-                        height={15}
-                        style={{ objectFit: "cover" }}
-                      />
-                      {currency.code} - {currency.name}
-                    </span>
-                  </Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
-            </Dropdown>
           </div>
         </div>
 
         {/* Receive Method */}
         <div className="currency-input position-relative mb-3">
-          <label className="label z-1">Receive method</label>
+          <label className="label z-1">거래방법</label>
 
           <Dropdown className="form-control">
             <Dropdown.Toggle
@@ -341,7 +277,7 @@ const CurrencyConverter = () => {
         </div>
 
         <button type="button" className="btn w-100 btn-primary">
-          Send Money
+          등록
         </button>
       </form>
     </>
