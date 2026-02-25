@@ -209,14 +209,7 @@ const Footer = () => {
                 <div className="col-lg-6">
                   <p className="copyright-content m-0 text-center text-lg-start">
                     Copyright @ <span>{footerData.copyright.company}</span>. All
-                    Rights Reserved by{" "}
-                    <a
-                      href={footerData.copyright.authorUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {footerData.copyright.author}
-                    </a>
+                    Rights Reserved
                   </p>
                 </div>
                 <div className="col-lg-6">

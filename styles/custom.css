@@ -1,0 +1,43 @@
+.otc-buy-desc {
+    font-size: 0.9em;
+}
+
+.otc-buy-desc .title {
+    margin-bottom: 10px;
+}
+
+.otc-buy-desc .content {
+    margin-bottom: 10px;
+    font-size: 0.8em;
+}
+
+.otc-buy-desc input {
+    margin-right: 5px;
+}
+
+.btn-disabled {
+    background-color: #9a9a9a;
+    color: #e3e0e0;
+    border-color: #9a9a9a;
+}
+
+.btn-amount {
+    white-space: nowrap;
+    padding: 5px 0;
+    margin-top: 5px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .btn-amount {
+        font-size: 11px;
+    }
+}
+
+.coming-soon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
