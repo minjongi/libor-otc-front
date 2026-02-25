@@ -9,7 +9,7 @@ const AboutContent = () => {
         <div className="container mw-1680">
           <div className="d-flex flex-wrap gap-10 align-items-end justify-content-between mb-40">
             <h2 className="main-title ms-0 mb-0 mw-960 fw-semibold">
-              About Expa{" "}
+              About Libor{" "}
               <Image
                 src="/images/title-img1.jpg"
                 className="title-img ms-lg-4 d-none d-lg-inline-block"
@@ -67,7 +67,7 @@ const AboutContent = () => {
                   </div>
 
                   <p>
-                    Behind Expa is a team of dedicated professionals passionate
+                    Behind Libor is a team of dedicated professionals passionate
                     about building trust and providing outstanding service.
                   </p>
                 </div>
@@ -77,7 +77,7 @@ const AboutContent = () => {
             <div className="col-lg-8">
               <div className="exchange-content">
                 <p>
-                  At Expa, we believe exchanging money should be simple, secure,
+                  At Libor, we believe exchanging money should be simple, secure,
                   and transparent. Our mission is to make currency exchange and
                   money transfers accessible to everyone—whether you’re
                   traveling abroad, supporting loved ones, or running an
@@ -114,10 +114,10 @@ const AboutContent = () => {
                         <div className="flex-grow-1">
                           <span>Email</span>
                           <a
-                            href="mailto:information@expa.com"
+                            href="mailto:information@libor.com"
                             className="text-decoration-none d-block"
                           >
-                            information@expa.com
+                            information@libor.com
                           </a>
                         </div>
                       </div>

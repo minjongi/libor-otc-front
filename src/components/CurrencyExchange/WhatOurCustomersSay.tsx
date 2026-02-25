@@ -34,7 +34,7 @@ const WhatOurCustomersSay = () => {
         alt: "customer",
       },
       quote:
-        "Expa has saved our company thousands in international transaction fees. Their business platform is intuitive and their support team is always available to help with complex transfers.",
+        "Libor has saved our company thousands in international transaction fees. Their business platform is intuitive and their support team is always available to help with complex transfers.",
       name: "Ronald Martinez",
       position: "CFO, FilaGlobal Inc.",
     },
@@ -45,7 +45,7 @@ const WhatOurCustomersSay = () => {
         alt: "customer",
       },
       quote:
-        "Switching to Expa simplified our global payroll process. We now handle cross-border payments in minutes, saving valuable time and resources.",
+        "Switching to Libor simplified our global payroll process. We now handle cross-border payments in minutes, saving valuable time and resources.",
       name: "Sophia Chen",
       position: "Head of Operations",
     },

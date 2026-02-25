@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const SolutionsForEveryone = ({
   sectionTitle = "Solutions for Everyone",
-  sectionDescription = "Whether you're an individual or a business, Expa offers tailored solutions to meet your payment needs",
+  sectionDescription = "Whether you're an individual or a business, Libor offers tailored solutions to meet your payment needs",
   topTitleImage = {
     src: "/images/top-title-shape.png",
     alt: "top-title-shape",
@@ -62,7 +62,7 @@ const SolutionsForEveryone = ({
     }
   ],
   contentTitle = "Personal Payment Solutions",
-  contentDescription = "Send money abroad, split bills with friends, and manage your finances with ease. Expa makes personal payments simple, secure, and affordable.",
+  contentDescription = "Send money abroad, split bills with friends, and manage your finances with ease. Libor makes personal payments simple, secure, and affordable.",
   ctaButton = {
     text: "Get Started for Free",
     href: "/pricing",

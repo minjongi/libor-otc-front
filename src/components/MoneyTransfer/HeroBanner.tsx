@@ -103,8 +103,8 @@ const HeroBanner = () => {
                   </div>
                   <div className="info-single-item">
                     <span className="d-block">Email</span>
-                    <a href="mailto:information@expa.com" className="call">
-                      information@expa.com
+                    <a href="mailto:information@libor.com" className="call">
+                      information@libor.com
                     </a>
                   </div>
                 </div>

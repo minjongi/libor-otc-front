@@ -347,7 +347,7 @@ const BlogDetailsContent = () => {
                       <input
                         type="email"
                         className="form-control"
-                        placeholder="ricky@expa.com"
+                        placeholder="ricky@libor.com"
                       />
                     </div>
 
@@ -356,7 +356,7 @@ const BlogDetailsContent = () => {
                       <input
                         type="url"
                         className="form-control"
-                        placeholder="www.expa.com"
+                        placeholder="www.libor.com"
                       />
                     </div>
 

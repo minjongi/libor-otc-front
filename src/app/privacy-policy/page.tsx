@@ -23,7 +23,7 @@ export default function Page() {
             <h3>1. Introduction</h3>
             <div className="pl-112">
               <p>
-                Expa Currency Exchange is committed to protecting your privacy
+                Libor Currency Exchange is committed to protecting your privacy
                 and ensuring the security of your personal information. This
                 Privacy Policy explains how we collect, use, disclose, and
                 safeguard your information when you use our services.

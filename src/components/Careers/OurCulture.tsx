@@ -12,7 +12,7 @@ const OurCulture = () => {
   const cultureData: CultureData = {
     title: "Our Culture",
     paragraphs: [
-      "At Expa, we're building more than just a money transfer service—we're creating a diverse, inclusive, and innovative environment where talented people can do their best work.",
+      "At Libor, we're building more than just a money transfer service—we're creating a diverse, inclusive, and innovative environment where talented people can do their best work.",
       "We believe that great ideas can come from anywhere, and we encourage collaboration across teams and departments to solve complex challenges in the financial industry.",
     ],
     culturePoints: [

@@ -12,7 +12,7 @@ const DownloadTheApp = () => {
       >
         <div className="container">
           <div className="apps-content-three">
-            <h2 className="main-title style-two ms-0">Download the Expa App</h2>
+            <h2 className="main-title style-two ms-0">Download the Libor App</h2>
             <p>
               Download the Expa app to send, exchange, and manage money on the
               go.

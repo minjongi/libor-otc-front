@@ -108,7 +108,7 @@ function Navbar() {
       >
         <div className="container mw-1680">
           <Link className="navbar-brand" href="/">
-            <Image src="/images/LIBOR.jpg" alt="logo" width={127} height={50} />
+            <Image src="/images/libor-logo.png" alt="logo" width={232} height={50} />
           </Link>
 
           <div className="collapse navbar-collapse">

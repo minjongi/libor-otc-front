@@ -27,7 +27,7 @@ const ChooseYourPlan = ({
       <div className="why-choose-three-area ptb-120">
         <div className="container">
           <h2 className="main-title style-two mw-825 text-center mx-auto mw-1270 mb-40">
-            Discover why thousands of individuals and businesses trust Expa for
+            Discover why thousands of individuals and businesses trust Libor for
             their currency exchange needs.
           </h2>
 

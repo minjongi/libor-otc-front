@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 const HowItWorks = ({
-  sectionTitle = "How Expa Works",
+  sectionTitle = "How Libor Works",
   sectionDescription = "Send, receive, and manage your money in just a few simple steps",
   topTitleImage = {
     src: "/images/top-title-shape2.png",

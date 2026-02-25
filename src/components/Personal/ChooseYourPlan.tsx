@@ -27,7 +27,7 @@ const ChooseYourPlan = ({
       <div className="why-choose-three-area ptb-120 bg-f7f7f7">
         <div className="container">
           <h2 className="main-title style-two mw-825 text-center mx-auto mb-40">
-            Why choose Expa for personal transfers?
+            Why choose Libor for personal transfers?
           </h2>
 
           <div className="row g-4">

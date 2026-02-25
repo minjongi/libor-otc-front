@@ -9,7 +9,7 @@ const AboutContent = () => {
         <div className="container mw-1680">
           <div className="d-flex flex-wrap gap-10 align-items-end justify-content-between mb-40">
             <h2 className="main-title style-two ms-0 mb-0 mw-920 fw-semibold ms-155">
-              About Expa{" "}
+              About Libor{" "}
               <Image
                 src="/images/title-img1.jpg"
                 className="title-img ms-lg-4 d-none d-lg-inline-block"
@@ -67,7 +67,7 @@ const AboutContent = () => {
                   </div>
 
                   <p>
-                    Behind Expa is a team of dedicated professionals passionate
+                    Behind Libor is a team of dedicated professionals passionate
                     about building trust and providing outstanding service.
                   </p>
                 </div>

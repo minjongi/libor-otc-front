@@ -11,7 +11,7 @@ const CurrencyExchangeCTA = () => {
             <h2>Currency Exchange</h2>
             <p>
               Join thousands of satisfied customers who save time and money with
-              Expa&apos;s secure, transparent, and cost-effective currency
+              Libor&apos;s secure, transparent, and cost-effective currency
               solutions.z
             </p>
 

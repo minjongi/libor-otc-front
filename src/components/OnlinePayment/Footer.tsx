@@ -48,7 +48,7 @@ const Footer = () => {
   // Dynamic copyright data
   const copyrightData = {
     year: new Date().getFullYear(),
-    companyName: "Expa",
+    companyName: "Libor",
     developerName: "EnvyTheme",
     developerUrl: "https://envytheme.com/",
   };
@@ -61,7 +61,7 @@ const Footer = () => {
             <div className="col-lg-4">
               <div className="footer-single-widget-two">
                 <p>
-                  Trusted by millions, Expa connects people worldwide with fast
+                  Trusted by millions, Libor connects people worldwide with fast
                   and fair transfers.
                 </p>
               </div>

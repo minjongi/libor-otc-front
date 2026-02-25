@@ -20,8 +20,8 @@ const Footer = () => {
     {
       id: 3,
       type: "email",
-      value: "information@expa.com",
-      link: "mailto:information@expa.com",
+      value: "information@libor.com",
+      link: "mailto:information@libor.com",
     },
   ];
 
@@ -60,23 +60,23 @@ const Footer = () => {
               <div className="footer-single-widget">
                 <div className="logo-wrap">
                   <Image
-                    src="/images/logo-black.svg"
+                    src="/images/libor-logo-black.png"
                     className="d-block"
                     alt="logo-black"
-                    width={127}
+                    width={232}
                     height={50}
                   />
                   <Image
-                    src="/images/LIBOR.jpg"
+                    src="/images/libor-logo.png"
                     className="d-none"
                     alt="logo"
-                    width={127}
+                    width={232}
                     height={50}
                   />
                 </div>
 
                 <p>
-                  Trusted by millions, Expa connects people worldwide with fast
+                  Trusted by millions, Libor connects people worldwide with fast
                   and fair transfers.
                 </p>
               </div>

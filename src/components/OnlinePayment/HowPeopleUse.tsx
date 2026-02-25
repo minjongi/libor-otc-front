@@ -1,7 +1,7 @@
 import React from "react";
 
 const HowPeopleUse = ({
-  title = "How people use Expa",
+  title = "How people use Libor",
   useCases = [
     {
       number: "01",

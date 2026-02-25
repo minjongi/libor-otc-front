@@ -16,7 +16,7 @@ const MobileApp = () => {
               Banking in Your Pocket
             </h2>
             <p>
-              With the Expa app, your financial world fits in your pocket. Send
+              With the Libor app, your financial world fits in your pocket. Send
               money internationally, pay bills, track spending, and more—all
               from your phone.
             </p>
