@@ -6,6 +6,7 @@ import "swiper/css/bundle";
 
 // Globals Styles
 import "../../styles/globals.css";
+import "../../styles/custom.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -20,7 +21,7 @@ const interSans = Inter({
 export const metadata: Metadata = {
   title: "Libor - Crypto Currency Exchange",
   description:
-    "Libor is a modern React and Next.js template designed for currency exchange and money transfer websites. It offers a clean design, fast performance, and all the essential features to build secure and professional fintech platforms.",
+    "Libor - Crypto Currency Exchange",
 };
 
 export default function RootLayout({
@@ -30,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${interSans.variable}`}>
+      <body className={`${interSans.variable} expa-dark`}>
         {children}
 
         <GoTop />
