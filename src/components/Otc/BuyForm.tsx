@@ -4,15 +4,15 @@ import {useEffect, useRef, useState} from "react"
 import Link from "next/link";
 import {useRouter, useSearchParams} from "next/navigation"
 import * as Yup from 'yup';
-import {Formik, Form, Field, ErrorMessage, FormikValues} from 'formik';
-import axios from 'axios';
+import {Formik, Form, Field, ErrorMessage, FormikProps, FormikValues} from 'formik';
+import axios, { AxiosResponse } from 'axios';
 import {NumericFormat} from 'react-number-format';
 import {getEasyTradeInfo, regEasyTradeInfo, bankName, sendAuthCode, confirmAuthCode} from "@/utils/otcUtil";
 
 const BuyForm = () => {
     const router = useRouter()
     const searchParams = useSearchParams()
-    const formRef = useRef(null);
+    const formRef = useRef<FormikProps<FormikValues> | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [easyTradeInfo, setEasyTradeInfo] = useState({
       assetTypeId: "",
@@ -51,7 +51,7 @@ const BuyForm = () => {
     });
 
     const sendAuthCodeAct = async () => {
-      if (!formRef || !formRef.current) {
+      if (!formRef || !formRef.current || !formRef.current.values) {
         return;
       }
 
@@ -62,9 +62,9 @@ const BuyForm = () => {
         phoneNumber: formRef.current.values.phoneNumber.replace(/\s/g, ''),
       }
 
-      const result = await sendAuthCode(params);
+      const result: false | AxiosResponse<any, any, {}> = await sendAuthCode(params);
 
-      if (result.data.status === 'success') {
+      if (result && result.data.status === 'success') {
         setIsSendAuthCode(true);
         alert('인증코드가 발송되었습니다\n인증코드 확인후 인증해 주세요');
       } else {
@@ -84,9 +84,9 @@ const BuyForm = () => {
         code: formRef.current.values.authNum,
       }
 
-      const result = await confirmAuthCode(params);
+      const result: false | AxiosResponse<any, any, {}> = await confirmAuthCode(params);
 
-      if (result.data.status === 'success') {
+      if (result && result.data.status === 'success') {
         setIsConfirmAuthCode(true);
         alert('인증되었습니다');
       } else {
@@ -139,8 +139,6 @@ const BuyForm = () => {
 
       info.buyerPhoneNumber = info.buyerPhoneNumber.replace(/[^0-9]/g, "")
 
-      console.log(info);
-
       setEasyTradeInfo(info);
       setIsLoading(true);
     }
@@ -178,7 +176,7 @@ const BuyForm = () => {
 
                                     <div className="currency-input position-relative z-1">
                                         <label className="label">단가</label>
-                                        <Field name="unitPrice" className="form-control" value={parseFloat(easyTradeInfo.assetMarketPrice || 0).toLocaleString()}
+                                        <Field name="unitPrice" className="form-control" value={parseFloat(easyTradeInfo.assetMarketPrice || '0').toLocaleString()}
                                                disabled/>
                                         <ErrorMessage name="unitPrice" component="p" className="text-danger"/>
                                     </div>
@@ -222,7 +220,7 @@ const BuyForm = () => {
                                     <div className="currency-input position-relative z-1">
                                       <label className="label">구매 금액</label>
                                       <Field name="formattedAmount">
-                                        {({ field }) => (
+                                        {({ field }: any) => (
                                           <NumericFormat
                                             className="form-control"
                                             {...field}
