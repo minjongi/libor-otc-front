@@ -45,7 +45,7 @@ const Settings = () => {
   }, []);
 
   // State to track dark mode
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   // Function to toggle dark mode
   const toggleDarkMode = () => {
@@ -73,6 +73,8 @@ const Settings = () => {
       // Apply dark mode class to body if needed
       if (isDark) {
         document.body.classList.add("expa-dark");
+      } else {
+        document.body.classList.remove("expa-dark");
       }
     }
   }, []);
@@ -80,31 +82,31 @@ const Settings = () => {
   return (
     <>
       <div className="overflow-hidden">
-        <div className={`settings-btn-wrap ${isActive ? "active" : ""}`}>
-          <div className="d-flex align-items-center">
-            <button className="settings-button" onClick={toggleActive}>
-              <i className="ri-settings-3-line"></i>
-            </button>
+        {/*<div className={`settings-btn-wrap ${isActive ? "active" : ""}`}>*/}
+        {/*  <div className="d-flex align-items-center">*/}
+        {/*    <button className="settings-button" onClick={toggleActive}>*/}
+        {/*      <i className="ri-settings-3-line"></i>*/}
+        {/*    </button>*/}
 
-            <div className="settings-box">
-              <button
-                type="button"
-                className="settings-btn rtl-btn d-block"
-                onClick={toggleRtlMode}
-              >
-                Switch To {rtlMode ? "LTR" : "RTL"}
-              </button>
+        {/*    <div className="settings-box">*/}
+        {/*      <button*/}
+        {/*        type="button"*/}
+        {/*        className="settings-btn rtl-btn d-block"*/}
+        {/*        onClick={toggleRtlMode}*/}
+        {/*      >*/}
+        {/*        Switch To {rtlMode ? "LTR" : "RTL"}*/}
+        {/*      </button>*/}
 
-              <button
-                type="button"
-                className="expa-light-dark settings-btn mt-2 d-block"
-                onClick={toggleDarkMode}
-              >
-                Switch To {darkMode ? "Light" : "Dark"}
-              </button>
-            </div>
-          </div>
-        </div>
+        {/*      <button*/}
+        {/*        type="button"*/}
+        {/*        className="expa-light-dark settings-btn mt-2 d-block"*/}
+        {/*        onClick={toggleDarkMode}*/}
+        {/*      >*/}
+        {/*        Switch To {darkMode ? "Light" : "Dark"}*/}
+        {/*      </button>*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </div>
     </>
   );

@@ -11,29 +11,35 @@ import Navbar from "@/components/CurrencyExchange/Navbar";
 import Services from "@/components/CurrencyExchange/Services";
 import WhatOurCustomersSay from "@/components/CurrencyExchange/WhatOurCustomersSay";
 import WhyChooseUs from "@/components/CurrencyExchange/WhyChooseUs";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-        <div className="ptb-120">
-            <div className="container">
-                <div className="text-center">
-                    <div className="mb-4">
-                        <Image
-                          src="/images/libor-logo.png"
-                          alt="libor"
-                          width={232}
-                          height={50}
-                        />
-                    </div>
+      <Navbar />
 
-                    <h2 className="mb-2">COMING SOON</h2>
-                    <p>We’re putting the finishing touches on our new site.</p>
-                </div>
-            </div>
-        </div>
+      <HeroBanner />
+
+      <HowCurrencyExchangeWorks />
+
+      <AboutContent />
+
+      <AnimatedText />
+
+      <Services />
+
+      <GlobalTransfers />
+
+      <WhyChooseUs />
+
+      <AdvancedSecurityMeasures />
+
+      <WhatOurCustomersSay />
+
+      <BlogPosts />
+
+      <CurrencyExchangeCTA />
+
+      <Footer />
     </>
   );
 }
