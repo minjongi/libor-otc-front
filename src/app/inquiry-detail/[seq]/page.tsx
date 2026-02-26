@@ -1,7 +1,7 @@
 import PageBanner from "@/components/Common/PageBanner";
 import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
-import NoticeDetailForm from "@/components/Notice-detail/Notice-detail";
+import InquiryDetailForm from "@/components/Inquiry-detail/Inquiry-detail";
 
 
 export default function Page() {
@@ -12,12 +12,12 @@ export default function Page() {
             <PageBanner
                 homePageUrl="/"
                 homePageText="Home"
-                pageTitle="공지사항"
+                pageTitle="문의내용"
                 phoneNumber="+44 (0506) 258 7485"
                 email="support24@libor-otc.com"
             />
 
-            <NoticeDetailForm />
+            <InquiryDetailForm />
 
             <Footer/>
         </>

@@ -41,18 +41,6 @@ export const menusData = [
       { title: "FAQ", href: "/faqs/" },
       { title: "문의", href: "/inquiry/" },
       { title: "Contact Us", href: "/contact-us/" },
-      { title: "Testimonials", href: "/testimonials/" },
-      { title: "Careers", href: "/careers/" },
-      { title: "Apply Now", href: "/apply-now/" },
-      { title: "Privacy Policy", href: "/privacy-policy/" },
-      { title: "Terms & Conditions", href: "/terms-conditions/" }
     ],
-  },
-  {
-    title: "Blog",
-    dropdown: [
-      { title: "Blog", href: "/blog/" },
-      { title: "Blog Details", href: "/blog/details/" },
-    ],
-  }, 
+  }
 ];
