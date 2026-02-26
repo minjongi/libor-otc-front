@@ -58,7 +58,7 @@ const inquiry = () => {
                                             <span>{item.seq}</span>
                                         </td>
                                         <td className="asset">
-                                            <Link href={'/notice-detail/' + item.seq}>{item.title}</Link>
+                                            <Link href={'/inquiry-detail/' + item.seq}>{item.title}</Link>
                                         </td>
                                         <td className="center">
                                             {item.createdAt}
