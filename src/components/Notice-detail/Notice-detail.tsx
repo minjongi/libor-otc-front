@@ -39,6 +39,7 @@ const NoticeDetailForm = () => {
 
                                 <form>
                                     <div className="currency-input position-relative z-1">
+                                        <label>제목</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -52,6 +53,7 @@ const NoticeDetailForm = () => {
                                     </div>
 
                                     <div className="currency-input position-relative z-1">
+                                        <label>공지일시</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -65,6 +67,7 @@ const NoticeDetailForm = () => {
                                     </div>
 
                                     <div className="currency-input position-relative z-1">
+                                        <label>상세내용</label>
                                         <textarea
                                             rows={5}
                                             className="form-control"
