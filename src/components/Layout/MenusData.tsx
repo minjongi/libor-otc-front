@@ -10,7 +10,8 @@ export const menusData = [
   {
     title: "거래",
     dropdown: [
-      { title: "간편 등록", href: "/services/" },
+      { title: "간편 구매등록", href: "/services/regBuyCoin" },
+      { title: "간편 판매등록", href: "/services/regSellCoin" },
       { title: "P2P 거래", href: "/services/details/" },
       { title: "내역", href: "/pricing/" },
       { title: "Personal", href: "/personal/" },
@@ -36,9 +37,9 @@ export const menusData = [
   {
     title: "고객센터",
     dropdown: [
-      { title: "공지사항", href: "/about-us/" },
+      { title: "공지사항", href: "/notice/" },
       { title: "FAQ", href: "/faqs/" },
-      { title: "문의", href: "/team/" },
+      { title: "문의", href: "/inquiry/" },
       { title: "Contact Us", href: "/contact-us/" },
       { title: "Testimonials", href: "/testimonials/" },
       { title: "Careers", href: "/careers/" },
