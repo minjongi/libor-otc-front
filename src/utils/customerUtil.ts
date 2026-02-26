@@ -124,7 +124,7 @@ export const noticeDetail = async (id: number) => {
   return response.data
 }
 
-export const apiBuyPrice = async (params) => {
+export const apiBuyPrice = async (params: any) => {
   if (typeof window === 'undefined') {
     return false;
   }
@@ -193,26 +193,26 @@ export const cryptoSellFinishedList = async (page: number, limit: number) => {
 
   return response.data
 }
-
-export const getBuyUserDetail = async (userId) => {
-  if (typeof window === 'undefined') {
-    return false;
-  }
-
-  const response = await axiosInstance.get('/transaction/buy/user/detail', { userId })
-
-  return response.data;
-}
-
-export const getSellUserDetail = async (userId) => {
-  if (typeof window === 'undefined') {
-    return false;
-  }
-
-  const response = await axiosInstance.get('/transaction/sell/user/detail', { userId })
-
-  return response.data;
-}
+//
+// export const getBuyUserDetail = async (userId: any) => {
+//   if (typeof window === 'undefined') {
+//     return false;
+//   }
+//
+//   const response = await axiosInstance.get('/transaction/buy/user/detail', { userId })
+//
+//   return response.data;
+// }
+//
+// export const getSellUserDetail = async (userId: any) => {
+//   if (typeof window === 'undefined') {
+//     return false;
+//   }
+//
+//   const response = await axiosInstance.get('/transaction/sell/user/detail', { userId })
+//
+//   return response.data;
+// }
 
 export const messageList = async (page: number, limit: number) => {
   if (typeof window === 'undefined') {
