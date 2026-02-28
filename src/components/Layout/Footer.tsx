@@ -74,8 +74,8 @@ const Footer = () => {
                 Start Sending Money Worldwide Today
               </h2>
               <p>
-                Join over 10 million customers who trust Expa for fast, secure,
-                and affordable international money transfers.
+                Join over 10 million customers who trust LIBOR for fast, secure,
+                and affordable international trading system.
               </p>
             </div>
 
@@ -161,8 +161,8 @@ const Footer = () => {
               <div className="col-lg-4">
                 <div className="footer-single-widget-two">
                   <p>
-                    Trusted by millions, Expa connects people worldwide with
-                    fast and fair transfers.
+                    Trusted by millions, LIBOR connects people worldwide with
+                    fast and fair trading.
                   </p>
                 </div>
               </div>
