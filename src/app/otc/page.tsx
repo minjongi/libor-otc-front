@@ -1,10 +1,10 @@
 import {Suspense} from "react"
-import KycForm from "@/components/Otc/KycForm";
+import BuyForm from "@/components/Otc/BuyForm";
 
 export default function Page() {
   return (
     <Suspense>
-      <KycForm />
+      <BuyForm />
     </Suspense>
   );
 }

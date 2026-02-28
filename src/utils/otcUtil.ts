@@ -123,7 +123,7 @@ export const confirmDepositOtcMatching = (otcTransactionMatchingId: string) => {
     })
 }
 
-export const kyc = (data: {
+export const kyc: any = (data: {
   agentId: string,
   loginId: string,
   password: string,
@@ -182,7 +182,7 @@ export const getEasyTradeClientUserInfo = async (agentId: string, userId: string
   return response.data
 }
 
-export const regEasyTradeInfo = (data: {
+export const regEasyTradeInfo: any = (data: {
   agentId: string,
   userId: string,
   assetTypeId: string,
@@ -203,37 +203,37 @@ export const regEasyTradeInfo = (data: {
     })
 }
 
-export const getBuyTransactionDetail = async (transactionId) => {
-  if (typeof window === 'undefined') {
-    return false;
-  }
+// export const getBuyTransactionDetail = async (transactionId: any) => {
+//   if (typeof window === 'undefined') {
+//     return false;
+//   }
+//
+//   const response = await axiosInstance.get('/transaction/buy/detail', { transactionId })
+//
+//   return response.data;
+// }
+//
+// export const cancelTransaction = async (transactionId: any) => {
+//   if (typeof window === 'undefined') {
+//     return false;
+//   }
+//
+//   const response = await axiosInstance.get('/transaction/cancel', { transactionId })
+//
+//   return response.data;
+// }
+//
+// export const confirmedBuyTransaction = async (transactionId: any) => {
+//   if (typeof window === 'undefined') {
+//     return false;
+//   }
+//
+//   const response = await axiosInstance.get('/transaction/buy/confirm', { transactionId })
+//
+//   return response.data;
+// }
 
-  const response = await axiosInstance.get('/transaction/buy/detail', { transactionId })
-
-  return response.data;
-}
-
-export const cancelTransaction = async (transactionId) => {
-  if (typeof window === 'undefined') {
-    return false;
-  }
-
-  const response = await axiosInstance.get('/transaction/cancel', { transactionId })
-
-  return response.data;
-}
-
-export const confirmedBuyTransaction = async (transactionId) => {
-  if (typeof window === 'undefined') {
-    return false;
-  }
-
-  const response = await axiosInstance.get('/transaction/buy/confirm', { transactionId })
-
-  return response.data;
-}
-
-export const bankName = (bankCode) => {
+export const bankName = (bankCode: string) => {
   const bankInfo = {
     "001": "한국은행",
     "002": "산업은행",
@@ -351,6 +351,7 @@ export const bankName = (bankCode) => {
     "291": "신영증권",
   }
 
+  // @ts-ignore
   return bankInfo[bankCode] || bankCode;
 }
 
