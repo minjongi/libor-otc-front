@@ -93,9 +93,6 @@ const BuyForm = () => {
       }
 
       user.phone_number = values.phoneNumber.replace(/\s/g, '');
-
-      console.log(user);
-
       kyc(user).then(() => {
         alert('등록이 완료되었습니다\n구매 페이지로 이동합니다');
         router.push('/otc?agId=' + searchParams.get('agId') + '&userId=' + searchParams.get('userId') + '&symbol=' + searchParams.get('symbol'));
@@ -112,11 +109,12 @@ const BuyForm = () => {
       const info = await getEasyTradeInfo(agentId, userId, symbol);
 
       if (info.status === 'success') {
-        router.push('/otc?agent_id=' + agentId + '&user_id=' + userId + '&symbol=' + symbol);
+        router.push('/otc?agId=' + agentId + '&userId=' + userId + '&symbol=' + symbol);
         return;
       }
 
       const result = await getEasyTradeClientUserInfo(searchParams.get('agId') || '', searchParams.get('userId') || '')
+
       setUser({
         agentId: result.agent_id,
         loginId: result.user_id,
