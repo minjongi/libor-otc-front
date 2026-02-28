@@ -2,23 +2,24 @@ import PageBanner from "@/components/Common/PageBanner";
 import ContactForm from "@/components/ContactUs/ContactForm";
 import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
+import CommonFooter from "@/components/CommonFooter/CommonFooter";
 
 export default function Page() {
-  return (
-    <>
-      <Navbar />
+    return (
+        <>
+            <Navbar/>
 
-      <PageBanner
-        homePageUrl="/"
-        homePageText="Home"
-        pageTitle="Contact Us"
-        phoneNumber="+44 (0506) 258 7485"
-        email="information@libor.com"
-      />
+            <PageBanner
+                homePageUrl="/"
+                homePageText="Home"
+                pageTitle="Contact Us"
+                phoneNumber="+44 (0506) 258 7485"
+                email="information@libor.com"
+            />
 
-      <ContactForm />
+            <ContactForm/>
 
-      <Footer />
-    </>
-  );
+            <CommonFooter/>
+        </>
+    );
 }

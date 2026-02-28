@@ -1,13 +1,13 @@
-import KycForm from "@/components/Otc/KycForm";
-import Navbar from "@/components/Layout/Navbar";
+import BuyForm from "@/components/Otc/BuyForm";
 import CommonFooter from "@/components/CommonFooter/CommonFooter";
+import Navbar from "@/components/Layout/Navbar";
 
 export default function Page() {
     return (
         <>
             <Navbar/>
 
-            <KycForm/>
+            <BuyForm/>
 
             <CommonFooter/>
         </>
