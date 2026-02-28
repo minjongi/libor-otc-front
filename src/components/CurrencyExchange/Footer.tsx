@@ -20,27 +20,25 @@ const Footer = () => {
     {
       id: 3,
       type: "email",
-      value: "information@libor.com",
-      link: "mailto:information@libor.com",
+      value: "support24@libor-otc.com",
+      link: "support24@libor-otc.com",
     },
   ];
 
   // Define company links data
   const companyLinks = [
-    { id: 1, text: "About Us", href: "/about-us" },
-    { id: 2, text: "Exchange Rate", href: "/exchange-rate" },
-    { id: 3, text: "Blog & News", href: "/blog" },
-    { id: 4, text: "Careers", href: "/careers" },
-    { id: 5, text: "Contact Us", href: "/contact-us" },
+    { id: 1, text: "간편 구매등록", href: "/services/regBuyCoin" },
+    { id: 2, text: "간편 판매등록", href: "/services/regSellCoin" },
+    { id: 3, text: "P2P 구매거래" , href: "/p2pTrade" },
+    { id: 4, text: "내역", href: "/pricing/matching" },
   ];
 
   // Define explore links data
   const exploreLinks = [
-    { id: 1, text: "FAQ's", href: "/faqs" },
-    { id: 2, text: "Help", href: "/faqs" },
-    { id: 3, text: "Blog & News", href: "/blog" },
-    { id: 4, text: "Privacy Policy", href: "/privacy-policy" },
-    { id: 5, text: "Terms & Conditions", href: "/terms-conditions" },
+    { id: 1, text: "공지사항", href: "/notice" },
+    { id: 2, text: "FAQ", href: "/faqs" },
+    { id: 3, text: "문의", href: "/inquiry" },
+    { id: 4, text: "Contact Us", href: "/contact-us" }
   ];
 
   // Define social media links data
@@ -185,7 +183,7 @@ const Footer = () => {
           </div>
 
           <p className="copyright-content mb-0 text-center">
-            Copyright @<span>Expa</span>. All Rights Reserved by{" "}
+            Copyright @<span>LIBOR</span>. All Rights Reserved by{" "}
             <a
               href="https://envytheme.com/"
               target="_blank"

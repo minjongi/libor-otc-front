@@ -7,33 +7,34 @@ import WhyChooseUs from "@/components/Common/WhyChooseUs";
 import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 import ServiceDetailsContent from "@/components/Services/ServiceDetailsContent";
+import CommonFooter from "@/components/CommonFooter/CommonFooter";
 
 export default function Page() {
-  return (
-    <>
-      <Navbar />
+    return (
+        <>
+            <Navbar/>
 
-      <PageBanner
-        homePageUrl="/"
-        homePageText="Home"
-        pageTitle="Service Details"
-        phoneNumber="+44 (0506) 258 7485"
-        email="information@libor.com"
-      />
+            <PageBanner
+                homePageUrl="/"
+                homePageText="Home"
+                pageTitle="Service Details"
+                phoneNumber="+44 (0506) 258 7485"
+                email="information@libor.com"
+            />
 
-      <ServiceDetailsContent />
+            <ServiceDetailsContent/>
 
-      <WhyChooseUs />
+            <WhyChooseUs/>
 
-      <HowItWorks />
+            <HowItWorks/>
 
-      <CommonUseCases />
+            <CommonUseCases/>
 
-      <PricingPlan />
+            <PricingPlan/>
 
-      <FaqContent />
+            <FaqContent/>
 
-      <Footer />
-    </>
-  );
+            <CommonFooter/>
+        </>
+    );
 }

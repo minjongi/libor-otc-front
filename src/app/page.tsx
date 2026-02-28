@@ -13,27 +13,19 @@ import WhatOurCustomersSay from "@/components/CurrencyExchange/WhatOurCustomersS
 import WhyChooseUs from "@/components/CurrencyExchange/WhyChooseUs";
 import Image from "next/image";
 import Link from "next/link";
+import BannerGraph from "@/components/Banner/BannerGraph";
+import CommonFooter from "@/components/CommonFooter/CommonFooter";
 
 export default function Home() {
-  return (
-    <>
-        <div className="ptb-120">
-            <div className="container">
-                <div className="text-center">
-                    <div className="mb-4">
-                        <Image
-                          src="/images/libor-logo.png"
-                          alt="libor"
-                          width={232}
-                          height={50}
-                        />
-                    </div>
+    return (
+        <>
+            <Navbar/>
 
-                    <h2 className="mb-2">COMING SOON</h2>
-                    <p>We’re putting the finishing touches on our new site.</p>
-                </div>
-            </div>
-        </div>
-    </>
-  );
+            <HeroBanner/>
+
+            <BannerGraph/>
+
+            <CommonFooter/>
+        </>
+    );
 }

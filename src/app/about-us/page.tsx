@@ -8,6 +8,7 @@ import ChooseYourPlan from "@/components/AboutUs/ChooseYourPlan";
 import Partners from "@/components/Common/Partners";
 import CustomerFeedbacks from "@/components/Common/CustomerFeedbacks";
 import ExperiencedLeadershipTeam from "@/components/Common/ExperiencedLeadershipTeam";
+import CommonFooter from "@/components/CommonFooter/CommonFooter";
 
 export default function Page() {
   return (
@@ -36,7 +37,7 @@ export default function Page() {
 
       <ExperiencedLeadershipTeam />
 
-      <Footer />
+      <CommonFooter />
     </>
   );
 }

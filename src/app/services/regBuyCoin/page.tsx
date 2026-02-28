@@ -7,6 +7,7 @@ import CurrencyConverter from "@/components/MoneyTransfer/CurrencyConverter";
 import React from "react";
 import BusinessPayments from "@/components/Business/BusinessPayments";
 import ExpressRegisterBuyCoin from "@/components/ExpressBuySellCoin/ExpressRegisterBuyCoin";
+import CommonFooter from "@/components/CommonFooter/CommonFooter";
 
 export default function Page() {
   return (
@@ -22,7 +23,7 @@ export default function Page() {
       />
         <ExpressRegisterBuyCoin />
 
-      <Footer />
+        <CommonFooter/>
     </>
   );
 }

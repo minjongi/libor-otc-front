@@ -2,6 +2,7 @@ import PageBanner from "@/components/Common/PageBanner";
 import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 import NoticeDetailForm from "@/components/Notice-detail/Notice-detail";
+import CommonFooter from "@/components/CommonFooter/CommonFooter";
 
 
 export default function Page() {
@@ -19,7 +20,7 @@ export default function Page() {
 
             <NoticeDetailForm />
 
-            <Footer/>
+            <CommonFooter/>
         </>
     );
 }
