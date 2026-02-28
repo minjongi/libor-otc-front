@@ -3,6 +3,7 @@ import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 import InquiryWriteForm from "@/components/Inquiry-Write/Inquiry-write";
 import PageBanner from "@/components/Common/PageBanner";
+import CommonFooter from "@/components/CommonFooter/CommonFooter";
 
 
 export default function Page() {
@@ -20,7 +21,7 @@ export default function Page() {
 
             <InquiryWriteForm />
 
-            <Footer/>
+            <CommonFooter/>
         </>
     );
 }
