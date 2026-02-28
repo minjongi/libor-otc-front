@@ -1,37 +1,18 @@
 export const menusData = [
-  {
-    title: "Home",
-    dropdown: [
-      { title: "Currency Exchange", href: "/" },
-      { title: "Money Transfer", href: "/money-transfer/" },
-      { title: "Online Payment", href: "/online-payment/" },
-    ],
-  },
-  {
+    {
     title: "거래",
     dropdown: [
-      { title: "간편 구매등록", href: "/services/regBuyCoin" },
-      { title: "간편 판매등록", href: "/services/regSellCoin" },
-      { title: "P2P 거래", href: "/services/details/" },
-      { title: "내역", href: "/pricing/" },
-      { title: "Personal", href: "/personal/" },
-      { title: "Business", href: "/business/" },
-      { title: "Send Money", href: "/send-money/" },
+      { title: "간편 구매등록", href: "/services/regBuyCoin/" },
+      { title: "간편 판매등록", href: "/services/regSellCoin/" },
+      { title: "P2P 구매거래", href: "/p2pTrade/" },
+      { title: "내역", href: "/p2pTrade/matching" }
     ],
   },
   {
-    title: "Exchange Rate",
+    title: "마이페이지",
     dropdown: [
-      { title: "Exchange Rate", href: "/exchange-rate/" },
-      {
-        title: "Historical Exchange Rates",
-        href: "/historical-exchange-rates/",
-      },
-      { title: "Rate Alert", href: "/rate-alert/" },
-      {
-        title: "Dynamic Currency Converter",
-        href: "/dynamic-currency-converter/",
-      },
+      { title: "내 정보", href: "/user-profile/" },
+      { title: "내 자산", href: "/assets/" },
     ],
   },
   {
