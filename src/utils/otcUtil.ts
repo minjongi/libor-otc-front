@@ -1,6 +1,6 @@
 import axiosInstance from '@/libs/axiosInstance'
 
-export const getOtcTransactionList = async (page: number, limit: number, type: string, loginUserOnly: number, status: number) => {
+export const getOtcTransactionList = async (page: number, limit: number, type: string, loginUserOnly: number | string, status: number) => {
   if (typeof window === 'undefined') {
     return false;
   }

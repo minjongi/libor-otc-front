@@ -10,7 +10,7 @@ const P2pTrade = () => {
     const [page, setPage] = useState(1);
     const [limit, setLimit] = useState(50);
 
-    const getOtcList = async (type) => {
+    const getOtcList = async (type: any) => {
         const data = await getOtcTransactionList(page, limit, type, '', 1)
         setList(data.data)
     }
