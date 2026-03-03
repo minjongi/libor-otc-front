@@ -2388,6 +2388,10 @@ progress {
     -webkit-overflow-scrolling: touch;
   }
 }
+.table th,
+.table td {
+  white-space: nowrap;
+}
 .form-label {
   margin-bottom: 0.5rem;
 }
