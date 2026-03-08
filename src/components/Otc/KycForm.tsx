@@ -59,7 +59,6 @@ const BuyForm = () => {
       if (result && result.data.status === 'success') {
         alert('인증코드가 발송되었습니다\n인증코드 확인후 인증해 주세요');
       } else if (result && result.data.status === 'popup') {
-        alert('test');
         setTimeout(() => {
           popupOnlineSms(result.data.msg);
         }, 1000)
