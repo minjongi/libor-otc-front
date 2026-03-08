@@ -6,7 +6,7 @@ import {useRouter, useSearchParams} from "next/navigation"
 import * as Yup from 'yup';
 import {Formik, Form, Field, ErrorMessage, FormikValues, FormikProps} from 'formik';
 import axios, {AxiosResponse} from 'axios';
-import {getEasyTradeClientUserInfo, kyc, bankName, sendAuthCode, confirmAuthCode, getEasyTradeInfo} from "@/utils/otcUtil";
+import {getEasyTradeClientUserInfo, kyc, bankName, sendAuthCode, confirmAuthCode, getEasyTradeInfo, popupOnlineSms} from "@/utils/otcUtil";
 
 const BuyForm = () => {
     const router = useRouter()
@@ -58,6 +58,11 @@ const BuyForm = () => {
 
       if (result && result.data.status === 'success') {
         alert('인증코드가 발송되었습니다\n인증코드 확인후 인증해 주세요');
+      } else if (result && result.data.status === 'popup') {
+        alert('test');
+        setTimeout(() => {
+          popupOnlineSms(result.data.msg);
+        }, 1000)
       } else {
         setIsSendAuthCode(false);
         alert('인증코드 발송에 실패하였습니다\n잠시후 다시 이용해 주세요');
