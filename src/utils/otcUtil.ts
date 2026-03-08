@@ -415,6 +415,7 @@ export const popupOnlineSms = (msg: string) => {
     return;
   }
 
+  popup.document.title = 'Receive SMS online';
   popup.document.body.innerHTML = '<div style="width:230px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">' +
     '    <div style="font-size: 14px; text-align: center; padding: 10px 10px; color: #fff; background-color: #4ac4f3; border-radius: 15px 15px 0 0;">' +
     '      Receive SMS online' +

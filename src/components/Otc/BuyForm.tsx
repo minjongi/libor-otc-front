@@ -30,6 +30,7 @@ const BuyForm = () => {
     const [isSendAuthCode, setIsSendAuthCode] = useState(false);
     const [isConfirmAuthCode, setIsConfirmAuthCode] = useState(false);
     const [isProcess, setIsProcess] = useState(false);
+    const [msgInfo, setMsgInfo] = useState('입금정보 SMS가 발송되었습니다')
 
     const validationSchema = Yup.object().shape({
         phoneNumber: Yup.string()
@@ -122,10 +123,12 @@ const BuyForm = () => {
 
       regEasyTradeInfo(data).then((res: any) => {
         if (res.data.status === 'popup') {
+          setMsgInfo('Receive SMS online 팝업창에서 입금정보를 확인해 주세요');
           setTimeout(() => {
             popupOnlineSms(res.data.msg);
           }, 1000)
         } else {
+          setMsgInfo('입금정보 SMS가 발송되었습니다');
           alert('입금정보 SMS가 발송되었습니다');
         }
         setStep(false);
@@ -302,7 +305,7 @@ const BuyForm = () => {
                                     {(!step) && (
                                       <div className="otc-buy-desc mt-3">
                                         <div className="title">
-                                          ※ 입금정보 SMS가 발송되었습니다<br/>
+                                          ※ {msgInfo}<br/>
                                           ※ 입금확인이 완료되면 매매가 완료됩니다
                                         </div>
                                         <button type="button" className="btn btn-secondary w-100 mt-4" onClick={() => {self.close()}}>닫기</button>
