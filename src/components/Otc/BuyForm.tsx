@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import {Formik, Form, Field, ErrorMessage, FormikProps, FormikValues} from 'formik';
 import axios, { AxiosResponse } from 'axios';
 import {NumericFormat} from 'react-number-format';
-import {getEasyTradeInfo, regEasyTradeInfo, bankName, sendAuthCode, confirmAuthCode} from "@/utils/otcUtil";
+import {getEasyTradeInfo, regEasyTradeInfo, bankName, sendAuthCode, confirmAuthCode, popupOnlineSms} from "@/utils/otcUtil";
 
 const BuyForm = () => {
     const router = useRouter()
@@ -55,6 +55,8 @@ const BuyForm = () => {
         return;
       }
 
+      setIsSendAuthCode(true);
+
       const params = {
         type: 2,
         agentId: searchParams.get('agId') || '',
@@ -65,14 +67,13 @@ const BuyForm = () => {
       const result: false | AxiosResponse<any, any, {}> = await sendAuthCode(params);
 
       if (result && result.data.status === 'success') {
-        setIsSendAuthCode(true);
         alert('인증코드가 발송되었습니다\n인증코드 확인후 인증해 주세요');
       } else if (result && result.data.status === 'popup') {
-        setIsSendAuthCode(true);
         setTimeout(() => {
           popupOnlineSms(result.data.msg);
         }, 1000)
       } else {
+        setIsSendAuthCode(false);
         alert('인증코드 발송에 실패하였습니다\n잠시후 다시 이용해 주세요');
       }
     }
@@ -153,27 +154,6 @@ const BuyForm = () => {
       setEasyTradeInfo(info);
       setIsLoading(true);
     }
-
-  const popupOnlineSms = (msg: string) => {
-    const width = 250;
-    const height = 220;
-    const left = (screen.width - width) / 2;
-    const top = (screen.height - height) / 2;
-    const popup = window.open('', 'authCode', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
-
-    if (!popup) {
-      alert('오류가 발생하였습니다');
-      return;
-    }
-
-    popup.document.body.innerHTML = '<div style="width:230px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">' +
-      '    <div style="font-size: 14px; text-align: center; padding: 10px 10px; color: #fff; background-color: #4ac4f3; border-radius: 15px 15px 0 0;">' +
-      '      Receive SMS online' +
-      '      <span style="margin-left: 5px; cursor: pointer;" onclick="self.close();">X</span>' +
-      '    </div>' +
-      '    <div style="min-height:100px; font-size: 13px; padding: 20px; text-align: left; white-space: pre-wrap;">' + msg.trim() +
-      '  </div>';
-  }
 
   useEffect(() => {
       getEasyTrade();
