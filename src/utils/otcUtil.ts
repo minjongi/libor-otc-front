@@ -411,7 +411,7 @@ export const popupOnlineSms = (msg: string) => {
   const popup = window.open('', 'authCode', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
 
   if (!popup) {
-    alert('오류가 발생하였습니다');
+    alert('오류가 발생하였습니다\n팝업 차단을 해제하고 다시 시도해 주세요');
     return;
   }
 
