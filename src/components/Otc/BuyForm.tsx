@@ -240,7 +240,7 @@ const BuyForm = () => {
                                             className="form-control"
                                             {...field}
                                             thousandSeparator={true}
-                                            onValueChange={(values) => {
+                                            onValueChange={(values: any) => {
                                               setFieldValue('amount', values.value);
                                             }}
                                             placeholder="0"

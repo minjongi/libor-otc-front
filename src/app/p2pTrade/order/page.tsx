@@ -1,9 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/Layout/Navbar";
 import PageBanner from "@/components/Common/PageBanner";
 import Footer from "@/components/Layout/Footer";
-import P2pTradeMatching from "@/components/P2pTrade-Matching/P2pTrade-Matching";
+import P2pTradeOrder from "@/components/P2pTrade-order/P2pTrade-Order";
 
 export default function Page() {
     return (
@@ -18,7 +16,7 @@ export default function Page() {
                 email="support24@libor-otc.com"
             />
 
-            <P2pTradeMatching />
+            <P2pTradeOrder />
 
             <Footer/>
         </>
