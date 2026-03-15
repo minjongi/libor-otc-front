@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import {Formik, Form, Field, ErrorMessage, FormikProps, FormikValues} from 'formik';
 import axios, { AxiosResponse } from 'axios';
 import {NumericFormat} from 'react-number-format';
-import {getEasyTradeInfo, regEasyTradeInfo, bankName, sendAuthCode, confirmAuthCode} from "@/utils/otcUtil";
+import {getEasyTradeInfo, regEasyTradeInfo, bankName, sendAuthCode, confirmAuthCode, popupOnlineSms} from "@/utils/otcUtil";
 
 const BuyForm = () => {
     const router = useRouter()
@@ -30,6 +30,7 @@ const BuyForm = () => {
     const [isSendAuthCode, setIsSendAuthCode] = useState(false);
     const [isConfirmAuthCode, setIsConfirmAuthCode] = useState(false);
     const [isProcess, setIsProcess] = useState(false);
+    const [msgInfo, setMsgInfo] = useState('입금정보 SMS가 발송되었습니다')
 
     const validationSchema = Yup.object().shape({
         phoneNumber: Yup.string()
@@ -55,6 +56,8 @@ const BuyForm = () => {
         return;
       }
 
+      setIsSendAuthCode(true);
+
       const params = {
         type: 2,
         agentId: searchParams.get('agId') || '',
@@ -65,9 +68,13 @@ const BuyForm = () => {
       const result: false | AxiosResponse<any, any, {}> = await sendAuthCode(params);
 
       if (result && result.data.status === 'success') {
-        setIsSendAuthCode(true);
         alert('인증코드가 발송되었습니다\n인증코드 확인후 인증해 주세요');
+      } else if (result && result.data.status === 'popup') {
+        setTimeout(() => {
+          popupOnlineSms(result.data.msg);
+        }, 1000)
       } else {
+        setIsSendAuthCode(false);
         alert('인증코드 발송에 실패하였습니다\n잠시후 다시 이용해 주세요');
       }
     }
@@ -114,8 +121,16 @@ const BuyForm = () => {
         phoneNumber: values.phoneNumber,
       }
 
-      regEasyTradeInfo(data).then(() => {
-        alert('입금정보 SMS가 발송되었습니다');
+      regEasyTradeInfo(data).then((res: any) => {
+        if (res.data.status === 'popup') {
+          setMsgInfo('Receive SMS online 팝업창에서 입금정보를 확인해 주세요');
+          setTimeout(() => {
+            popupOnlineSms(res.data.msg);
+          }, 1000)
+        } else {
+          setMsgInfo('입금정보 SMS가 발송되었습니다');
+          alert('입금정보 SMS가 발송되었습니다');
+        }
         setStep(false);
       }).catch(() => {
         alert('오류가 발생하였습니다\n창을 닫고 다시 시도해 주세요');
@@ -143,7 +158,7 @@ const BuyForm = () => {
       setIsLoading(true);
     }
 
-    useEffect(() => {
+  useEffect(() => {
       getEasyTrade();
     }, [])
 
@@ -290,7 +305,7 @@ const BuyForm = () => {
                                     {(!step) && (
                                       <div className="otc-buy-desc mt-3">
                                         <div className="title">
-                                          ※ 입금정보 SMS가 발송되었습니다<br/>
+                                          ※ {msgInfo}<br/>
                                           ※ 입금확인이 완료되면 매매가 완료됩니다
                                         </div>
                                         <button type="button" className="btn btn-secondary w-100 mt-4" onClick={() => {self.close()}}>닫기</button>

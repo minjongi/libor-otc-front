@@ -402,3 +402,25 @@ export const confirmAuthCode = (data: {
       code: data.code || '',
     })
 }
+
+export const popupOnlineSms = (msg: string) => {
+  const width = 250;
+  const height = 220;
+  const left = (screen.width - width) / 2;
+  const top = (screen.height - height) / 2;
+  const popup = window.open('', 'authCode', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+
+  if (!popup) {
+    alert('오류가 발생하였습니다\n팝업 차단을 해제하고 다시 시도해 주세요');
+    return;
+  }
+
+  popup.document.title = 'Receive SMS online';
+  popup.document.body.innerHTML = '<div style="width:230px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">' +
+    '    <div style="font-size: 14px; text-align: center; padding: 10px 10px; color: #fff; background-color: #4ac4f3; border-radius: 15px 15px 0 0;">' +
+    '      Receive SMS online' +
+    '      <span style="margin-left: 5px; cursor: pointer;" onclick="self.close();">X</span>' +
+    '    </div>' +
+    '    <div style="min-height:100px; font-size: 13px; padding: 20px; text-align: left; white-space: pre-wrap;">' + msg.trim() +
+    '  </div>';
+}
