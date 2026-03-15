@@ -19686,3 +19686,83 @@ Page-navigation Area Style
 .expa-dark .currency-converter .conversion-result {
   color: white;
 }/*# sourceMappingURL=globals.css.map */
+
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group > div{
+  display:flex;
+  flex-direction:column;
+}
+
+.profile-wrapper .form-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .profile-wrapper .form-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profile-wrapper {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.profile-wrapper h4 {
+  margin-bottom: 35px;
+}
+
+.profile-wrapper label {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.profile-wrapper .form-control {
+  height: 55px;
+  padding: 0 16px;
+  border-radius: 10px;
+}
+
+.profile-container{
+  display:flex;
+  gap:40px;
+  align-items:stretch;
+}
+
+.profile-image{
+  flex:1;
+  border-radius:10px;
+  background-size:cover;
+  background-position:center;
+  min-height: 450px;
+}
+
+.profile-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+}
+
+@media (max-width:768px){
+
+  .profile-container{
+    flex-direction:column;
+  }
+
+  .profile-image,
+  .my-account-form{
+    width:100%;
+  }
+
+}
