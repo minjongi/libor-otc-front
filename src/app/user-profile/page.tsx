@@ -1,25 +1,25 @@
-import Image from "next/image";
+
+import Navbar from "@/components/Layout/Navbar";
+import PageBanner from "@/components/Common/PageBanner";
+import Footer from "@/components/Layout/Footer";
+import UserProfile from "@/components/User-Profile/User-Profile";
 
 export default function Page() {
     return (
         <>
-            <div className="ptb-120">
-                <div className="container">
-                    <div className="text-center">
-                        <div className="mb-4">
-                            <Image
-                                src="/images/libor-logo.png"
-                                alt="libor"
-                                width={232}
-                                height={50}
-                            />
-                        </div>
+            <Navbar/>
 
-                        <h2 className="mb-2">COMING SOON</h2>
-                        <p>We’re putting the finishing touches on our new site.</p>
-                    </div>
-                </div>
-            </div>
+            <PageBanner
+                homePageUrl="/"
+                homePageText="Home"
+                pageTitle="내 정보"
+                phoneNumber="+44 (0506) 258 7485"
+                email="support24@libor-otc.com"
+            />
+
+            <UserProfile />
+
+            <Footer/>
         </>
     );
 }
