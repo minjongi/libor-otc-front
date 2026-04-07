@@ -162,7 +162,7 @@ const ExpressRegBuyCoin = () => {
                         </div>
 
                         <div className="col-lg-5">
-                            <form className="currency-converter-form style-two bg-primary">
+                            <div className="currency-converter-form style-two bg-primary">
                                 <Formik
                                     initialValues={{coin: '', quantity: '', price: ''}}
                                     validationSchema={validationSchema}
@@ -246,7 +246,7 @@ const ExpressRegBuyCoin = () => {
                                         </Form>
                                     )}
                                 </Formik>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo, ChangeEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dropdown } from "react-bootstrap";
+import {useTranslations} from "use-intl";
 
 // Define types for better type safety
 type Currency = {
@@ -138,6 +139,8 @@ const HeroBanner = () => {
     setToCurrency(fromCurrency);
   };
 
+  const t = useTranslations();
+
   return (
     <>
       <div
@@ -157,7 +160,7 @@ const HeroBanner = () => {
               }}
           >
             <h1>
-              LIBOR에서 안전하게{" "}
+              LIBOR에서 안전하게{" "} <button onClick={() => alert('성공')}>TEST</button>
               <Image
                   src="/images/money-exchange.gif"
                   className="money-exchange d-none d-xxl-inline-block"

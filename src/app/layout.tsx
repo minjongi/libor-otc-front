@@ -10,6 +10,10 @@ import "../../styles/custom.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+
 import GoTop from "@/components/Layout/GoTop";
 import Settings from "@/components/Layout/Settings";
 
@@ -20,24 +24,26 @@ const interSans = Inter({
 
 export const metadata: Metadata = {
   title: "Libor - Crypto Currency Exchange",
-  description:
-    "Libor - Crypto Currency Exchange",
+  description: "Libor - Crypto Currency Exchange",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default async function LocaleLayout({
+                                             children,
+                                           }: {
   children: React.ReactNode;
-}>) {
+}) {
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
+      <html lang="en">
       <body className={`${interSans.variable} expa-dark`}>
+      <NextIntlClientProvider messages={messages}>
         {children}
 
         <GoTop />
-
         <Settings />
+      </NextIntlClientProvider>
       </body>
-    </html>
+      </html>
   );
 }
