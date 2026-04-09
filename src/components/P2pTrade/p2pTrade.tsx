@@ -3,8 +3,10 @@
 import React, {useState, useEffect} from "react";
 import {getOtcTransactionList} from "@/utils/otcUtil";
 import Link from "next/link";
+import {useTranslations} from "next-intl";
 
 const P2pTrade = () => {
+    const t = useTranslations();
     const [flatTabs, setFlatTabs] = useState(1);
     const [list, setList] = useState([]);
     const [page, setPage] = useState(1);
@@ -20,7 +22,7 @@ const P2pTrade = () => {
     }, [page, limit, flatTabs]);
 
     const btnTitle = (type: number) => {
-        return type === 1 ? "구매" : "판매";
+        return type === 1 ? t('buy') : t('sell');
     };
 
     const getBuyList = [
@@ -89,7 +91,7 @@ const P2pTrade = () => {
                                     transition: "all 0.2s ease",
                                 }}
                             >
-                                구매
+                                {t('buy')}
                             </div>
 
                             <div
@@ -109,7 +111,7 @@ const P2pTrade = () => {
                                     transition: "all 0.2s ease",
                                 }}
                             >
-                                판매
+                                {t('sell')}
                             </div>
                         </div>
                         <div className="exchange-table table-responsive">
@@ -117,10 +119,10 @@ const P2pTrade = () => {
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">코인명</th>
-                                    <th scope="col">가격</th>
-                                    <th scope="col">수량</th>
-                                    <th scope="col">등록일시</th>
+                                    <th scope="col">{t('coinName')}</th>
+                                    <th scope="col">{t('price')}</th>
+                                    <th scope="col">{t('quantity')}</th>
+                                    <th scope="col">{t('registerdDate')}</th>
                                     <th scope="col"></th>
                                 </tr>
                                 </thead>
@@ -128,7 +130,7 @@ const P2pTrade = () => {
                                 {!getBuyList.length && (
                                     <tr>
                                         <td className="center" colSpan={7}>
-                                            <span>{'데이터 없음'}</span>
+                                            <span>{t('noData')}</span>
                                         </td>
                                     </tr>
                                 )}
@@ -191,7 +193,7 @@ const P2pTrade = () => {
                                             onClick={() => setPage(prev => prev - 1)}
                                             disabled={page === 1}
                                         >
-                                            {'이전'}
+                                            {t('prev')}
                                         </button>
                                     </li>
 
@@ -206,7 +208,7 @@ const P2pTrade = () => {
                                             className="page-link"
                                             onClick={() => setPage(prev => prev + 1)}
                                         >
-                                            {'다음'}
+                                            {t('next')}
                                         </button>
                                     </li>
                                 </ul>

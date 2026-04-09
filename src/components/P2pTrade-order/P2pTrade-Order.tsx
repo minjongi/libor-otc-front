@@ -1,11 +1,13 @@
 "use client";
 
 import React, {useState, useEffect} from "react";
-import {cancelOtcTransaction, getOtcTransactionList, getOtcTransactionMatchingList} from "@/utils/otcUtil";
+import {cancelOtcTransaction, getOtcTransactionList} from "@/utils/otcUtil";
 import Link from "next/link";
 import {usePathname, useRouter} from "next/navigation";
+import {useTranslations} from "next-intl";
 
 const P2pTradeOrder = () => {
+    const t = useTranslations();
     const router = useRouter()
     const pathname = usePathname();
     const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +27,7 @@ const P2pTradeOrder = () => {
     }
 
     const cancelOtc = async (id: string) => {
-        if (!confirm('취소 처리 하시겠습니까?')) {
+        if (!confirm(t('cautionCancelAlert'))) {
             return;
         }
 
@@ -50,7 +52,7 @@ const P2pTradeOrder = () => {
                                 minWidth: "80px",
                                 textAlign: "center",
                                 display: "inline-block"
-                            }}>{'취소'}</Link></span>
+                            }}>{t('cancel')}</Link></span>
             );
         } else {
             return '';
@@ -62,17 +64,17 @@ const P2pTradeOrder = () => {
     }
 
     const transactionType = (item: any) => {
-        return (item.type === 1) ? '판매' : '구매';
+        return (item.type === 1) ? t('sell') : t('buy');
     }
 
     const statusTitle = (status: any) => {
         switch (status) {
             case 1:
-                return '진행';
+                return t('inProgress');
             case 2:
-                return '완료';
+                return t('completed');
             case 3:
-                return '취소';
+                return t('cancel');
         }
     }
 
@@ -144,7 +146,7 @@ const P2pTradeOrder = () => {
                                     transition: "all 0.2s ease",
                                 }}
                             >
-                                매칭 내역
+                                {t('matchingHistory')}
                             </div>
 
                             <div
@@ -162,7 +164,7 @@ const P2pTradeOrder = () => {
                                     transition: "all 0.2s ease",
                                 }}
                             >
-                                주문 내역
+                                {t('orderHistory')}
                             </div>
                         </div>
                         <div className="exchange-table table-responsive">
@@ -170,12 +172,12 @@ const P2pTradeOrder = () => {
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">코인명</th>
-                                    <th scope="col">가격</th>
-                                    <th scope="col">남은수량</th>
-                                    <th scope="col">구분</th>
-                                    <th scope="col">상태</th>
-                                    <th scope="col">등록일시</th>
+                                    <th scope="col">{t('coinName')}</th>
+                                    <th scope="col">{t('price')}</th>
+                                    <th scope="col">{t('remainingQuantity')}</th>
+                                    <th scope="col">{t('type')}</th>
+                                    <th scope="col">{t('status')}</th>
+                                    <th scope="col">{t('registerdDate')}</th>
                                     <th scope="col"></th>
                                 </tr>
                                 </thead>
@@ -183,7 +185,7 @@ const P2pTradeOrder = () => {
                                 {!getBuyList.length && (
                                     <tr>
                                         <td className="center" colSpan={7}>
-                                            <span>{'데이터 없음'}</span>
+                                            <span>{t('noData')}</span>
                                         </td>
                                     </tr>
                                 )}
@@ -237,7 +239,7 @@ const P2pTradeOrder = () => {
                                             onClick={() => setPage(prev => prev - 1)}
                                             disabled={page === 1}
                                         >
-                                            {'이전'}
+                                            {t('prev')}
                                         </button>
                                     </li>
 
@@ -252,7 +254,7 @@ const P2pTradeOrder = () => {
                                             className="page-link"
                                             onClick={() => setPage(prev => prev + 1)}
                                         >
-                                            {'다음'}
+                                            {t('next')}
                                         </button>
                                     </li>
                                 </ul>

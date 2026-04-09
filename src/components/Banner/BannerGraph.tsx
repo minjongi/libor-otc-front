@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
-// Define TypeScript interfaces
 interface ExchangeRate {
     id: number;
     pair: string;
@@ -14,21 +14,13 @@ interface ExchangeRate {
     chart: string;
 }
 
-interface ApiResponse {
-    rates: {
-        [key: string]: number;
-    };
-    base: string;
-    date: string;
-}
-
 const LiveExchangeRates = () => {
+    const t = useTranslations();
     const [exchangeRates, setExchangeRates] = useState<ExchangeRate[]>([]);
     const [lastUpdated, setLastUpdated] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Mock data - replace with actual API call
     const mockExchangeRates: ExchangeRate[] = [
         {
             id: 1,
@@ -77,20 +69,6 @@ const LiveExchangeRates = () => {
         },
     ];
 
-    // Helper function to get currency names
-    const getCurrencyName = (currency: string): string => {
-        const names: { [key: string]: string } = {
-            EUR: "Euro",
-            GBP: "British Pound",
-            JPY: "Japanese Yen",
-            CHF: "Swiss Franc",
-            AUD: "Australian Dollar",
-            USD: "US Dollar",
-        };
-        return names[currency] || currency;
-    };
-
-    // Fetch exchange rates data
     const fetchExchangeRates = async (): Promise<void> => {
         try {
             setLoading(true);
@@ -141,9 +119,9 @@ const LiveExchangeRates = () => {
             <div className="pt-120">
                 <div className="container">d
                     <span className="exchange-title">
-            <span>Live</span> Price Changes
+            <span>{t('banner_graph_1')}</span>
           </span>
-                    <div className="text-center py-5">Loading Price Changes...</div>
+                    <div className="text-center py-5">{t('banner_graph_2')}...</div>
                 </div>
             </div>
         );
@@ -154,13 +132,13 @@ const LiveExchangeRates = () => {
             <div className="pt-120">
                 <div className="container">
           <span className="exchange-title">
-            <span>Live</span> Price Changes
+            <span>{t('banner_graph_1')}</span>
           </span>
 
                     <div className="table-border">
                         <div className="d-flex justify-content-between align-items-center table-info">
               <span className="text-body">
-                Last updated: {lastUpdated}
+                {t('banner_graph_3')}: {lastUpdated}
                   {loading && <span className="ms-2">(Updating...)</span>}
               </span>
                             <button
@@ -183,11 +161,11 @@ const LiveExchangeRates = () => {
                             <table className="table align-middle table-striped mb-0">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Currency</th>
-                                    <th scope="col">Rate</th>
-                                    <th scope="col">Change (24h)</th>
-                                    <th scope="col">Chart</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">{t('coinName')}</th>
+                                    <th scope="col">{t('price')}</th>
+                                    <th scope="col">{t('banner_graph_5')} (24h)</th>
+                                    <th scope="col">{t('banner_graph_6')}</th>
+                                    <th scope="col">{t('banner_graph_7')}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -225,7 +203,7 @@ const LiveExchangeRates = () => {
                                                 className="btn btn-primary"
                                                 onClick={() => handleExchange(currency.pair)}
                                             >
-                                                Exchange
+                                                {t('buy')}
                                             </button>
                                         </td>
                                     </tr>

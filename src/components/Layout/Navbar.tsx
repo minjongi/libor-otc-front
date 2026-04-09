@@ -26,6 +26,8 @@ interface MenuItemsProps {
 
 // Recursive menu component (modern typing)
 function MenuItems({ items, pathname, level = 0 }: MenuItemsProps) {
+  const t = useTranslations();
+
   return (
     <ul className={level === 0 ? "navbar-nav m-auto" : "dropdown-menu"}>
       {items.map((item, index) => {
@@ -44,7 +46,7 @@ function MenuItems({ items, pathname, level = 0 }: MenuItemsProps) {
                 href="#"
                 onClick={(e) => e.preventDefault()}
               >
-                {item.title}
+                {t(item.title)}
               </Link>
               <MenuItems
                 items={item.dropdown}
@@ -62,7 +64,7 @@ function MenuItems({ items, pathname, level = 0 }: MenuItemsProps) {
                   isActive ? "active" : ""
                 }`}
               >
-                {item.title}
+                {t(item.title)}
               </Link>
             </li>
           );
@@ -138,16 +140,16 @@ function Navbar() {
                   background: "#fff",
                 }}
             >
-              <option value="ko">한국</option>
-              <option value="en">영어</option>
-              <option value="ja">일본어</option>
-              <option value="zh">중국어</option>
+              <option value="ko">{t('ko')}</option>
+              <option value="en">{t('en')}</option>
+              <option value="ja">{t('ja')}</option>
+              <option value="zh">{t('cn')}</option>
             </select>
             <div className="d-flex align-items-center info">
               <Link href="/login">{t('logIn')}</Link>
             </div>
             <Link href="/register" className="btn d-none d-sm-inline-block">
-              회원가입
+              {t('signUp')}
             </Link>
             <button
               type="button"

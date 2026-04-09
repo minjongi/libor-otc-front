@@ -1,27 +1,27 @@
 export const menusData = [
     {
-    title: "거래",
+    title: "trade",
     dropdown: [
-      { title: "간편 구매등록", href: "/services/regBuyCoin/" },
-      { title: "간편 판매등록", href: "/services/regSellCoin/" },
-      { title: "P2P 구매거래", href: "/p2pTrade/" },
-      { title: "내역", href: "/p2pTrade/matching" }
+      { title: "expressRegBuy", href: "/services/regBuyCoin/" },
+      { title: "expressRegSell", href: "/services/regSellCoin/" },
+      { title: "p2pTrading", href: "/p2pTrade/" },
+      { title: "transactionHistory", href: "/p2pTrade/matching" }
     ],
   },
   {
-    title: "마이페이지",
+    title: "myPage",
     dropdown: [
-      { title: "내 정보", href: "/user-profile/" },
-      { title: "내 자산", href: "/assets/" },
+      { title: "myInfo", href: "/user-profile/" },
+      { title: "myAsset", href: "/assets/" },
     ],
   },
   {
-    title: "고객센터",
+    title: "customerSupport",
     dropdown: [
-      { title: "공지사항", href: "/notice/" },
-      { title: "FAQ", href: "/faqs/" },
-      { title: "문의", href: "/inquiry/" },
-      { title: "Contact Us", href: "/contact-us/" },
+      { title: "notice", href: "/notice/" },
+      { title: "faq", href: "/faqs/" },
+      { title: "inquiry", href: "/inquiry/" },
+      { title: "contact", href: "/contact-us/" },
     ],
   }
 ];

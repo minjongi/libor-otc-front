@@ -4,13 +4,15 @@ import React from "react";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import {regInquiry} from "@/utils/customerUtil";
 import * as Yup from "yup";
+import {useTranslations} from "next-intl";
 
 const InquiryWriteForm = () => {
+    const t = useTranslations();
 
     const validationSchema = Yup.object().shape({
-        name: Yup.string().required('이름을 입력해주세요.'),
-        title: Yup.string().required('제목을 입력해주세요.'),
-        content: Yup.string().required('내용을 입력해주세요.'),
+        name: Yup.string().required(t('validationEnterName')),
+        title: Yup.string().required(t('validationEnterTitle')),
+        content: Yup.string().required(t('validationEnterContent')),
     })
 
     return (
@@ -33,18 +35,18 @@ const InquiryWriteForm = () => {
                                         <div className="contact-us-info">
                                             <div className="d-flex justify-content-between gap-20 mb-40">
                                                 <div>
-                                                    <h3>Phone Support</h3>
+                                                    <h3>{t('phoneSupport')}</h3>
                                                     <a
                                                         href="tel:+44(0506)2587485"
                                                         className="text-decoration-none"
                                                     >
                                                         +44 (0506) 258 7485
                                                     </a>
-                                                    <span className="d-block">Monday-Friday: 8am-8pm</span>
-                                                    <span className="d-block">Saturday: 9am-6pm</span>
+                                                    <span className="d-block">{t('phoneSupport_explain1')}</span>
+                                                    <span className="d-block">{t('phoneSupport_explain2')}</span>
                                                 </div>
                                                 <div>
-                                                    <h3>Email Us</h3>
+                                                    <h3>{t('emailUs')}</h3>
                                                     <a
                                                         href="mailto:info@libor.com"
                                                         className="text-decoration-none"
@@ -57,22 +59,22 @@ const InquiryWriteForm = () => {
                                                     >
                                                         support@libor.com
                                                     </a>
-                                                    <span className="d-block">We respond within 24 hours</span>
+                                                    <span className="d-block">{t('response24')}</span>
                                                 </div>
                                             </div>
-                                            <h3>Office Hours</h3>
+                                            <h3>{t('officeHour')}</h3>
                                             <div className="d-flex justify-content-between gap-20 mb-40">
                                                 <div>
-                                                    <span className="d-block">Monday - Friday</span>
-                                                    <span className="d-block">Saturday</span>
-                                                    <span className="d-block">Sunday</span>
-                                                    <span className="d-block">Public Holidays</span>
+                                                    <span className="d-block">{t('monToFri')}</span>
+                                                    <span className="d-block">{t('sat')}</span>
+                                                    <span className="d-block">{t('sun')}</span>
+                                                    <span className="d-block">{t('publicHoliday')}</span>
                                                 </div>
                                                 <div>
                                                     <span className="d-block text-body"> 8:00 AM - 8:00 PM</span>
                                                     <span className="d-block text-body"> 9:00 AM - 6:00 PM</span>
                                                     <span className="d-block text-body"> 10:00 AM - 4:00 PM</span>
-                                                    <span className="d-block text-body">Closed</span>
+                                                    <span className="d-block text-body">{t('offday')}</span>
                                                 </div>
                                             </div>
 
@@ -92,11 +94,11 @@ const InquiryWriteForm = () => {
                                         <div className="contact-us-form h-100">
                                             <h3>문의 작성</h3>
                                             <div className="currency-input position-relative z-1">
-                                                <label className="label">이름</label>
+                                                <label className="label">{t('name')}</label>
                                                 <Field
                                                     name="name"
                                                     className="form-control"
-                                                    placeholder="이름을 입력하세요."
+                                                    placeholder={t('placeHolderName')}
                                                 >
                                                 </Field>
                                                 <ErrorMessage
@@ -106,11 +108,11 @@ const InquiryWriteForm = () => {
                                                 />
                                             </div>
                                             <div className="currency-input position-relative z-1">
-                                                <label className="label">제목</label>
+                                                <label className="label">{t('title')}</label>
                                                 <Field
                                                     name="title"
                                                     className="form-control"
-                                                    placeholder="제목을 입력하세요."
+                                                    placeholder= {t('placeHolerTitle')}
                                                 >
                                                 </Field>
                                                 <ErrorMessage
@@ -121,13 +123,13 @@ const InquiryWriteForm = () => {
                                             </div>
 
                                             <div className="currency-input position-relative z-1">
-                                                <label className="label">내용</label>
+                                                <label className="label">{t('content')}</label>
 
                                                 <Field
                                                     as="textarea"
                                                     name="content"
                                                     className="form-control"
-                                                    placeholder="문의 내용을 입력하세요."
+                                                    placeholder= {t('placeHolderContent')}
                                                     style={{height: "300px"}}
                                                 />
 
@@ -138,7 +140,7 @@ const InquiryWriteForm = () => {
                                                 />
                                             </div>
                                             <button type="submit" className="btn btn-secondary w-100">
-                                                문의 등록
+                                                {t('submitInquiry')}
                                             </button>
 
                                         </div>

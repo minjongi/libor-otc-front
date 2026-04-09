@@ -3,9 +3,10 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
 import Link from "next/link";
+import {useTranslations} from "next-intl";
 
 const InquiryDetailForm = () => {
-
+    const t = useTranslations();
     const params = useParams()
     const seq = params.seq
 
@@ -35,11 +36,11 @@ const InquiryDetailForm = () => {
                     <div className="row justify-content-center g-4">
                         <div className="col-lg-7">
                             <div className="contact-us-form mw-648">
-                                <h3>문의내용</h3>
+                                <h3>{t('inQuiryDetails')}</h3>
 
                                 <form>
                                     <div className="currency-input position-relative z-1">
-                                        <label>제목</label>
+                                        <label>{t('title')}</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -53,7 +54,7 @@ const InquiryDetailForm = () => {
                                     </div>
 
                                     <div className="currency-input position-relative z-1">
-                                        <label>문의 일시</label>
+                                        <label>{t('createdDate')}</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -67,7 +68,7 @@ const InquiryDetailForm = () => {
                                     </div>
 
                                     <div className="currency-input position-relative z-1">
-                                        <label>문의내용</label>
+                                        <label>{t('content')}</label>
                                         <textarea
                                             rows={5}
                                             className="form-control"
@@ -82,7 +83,7 @@ const InquiryDetailForm = () => {
                                     </div>
 
                                     <div className="currency-input position-relative z-1">
-                                        <label>답변내용</label>
+                                        <label>{t('answer')}</label>
                                         <textarea
                                             rows={5}
                                             className="form-control"
@@ -98,7 +99,7 @@ const InquiryDetailForm = () => {
 
                                     <div className="btn btn-secondary w-100">
                                         <Link href="/inquiry">
-                                            이전
+                                            {t('answer')}
                                         </Link>
                                     </div>
                                 </form>

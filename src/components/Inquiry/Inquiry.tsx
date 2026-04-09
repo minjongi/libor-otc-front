@@ -2,9 +2,10 @@
 
 import React, {useState, useEffect} from "react";
 import Link from "next/link";
-
+import {useTranslations} from "next-intl";
 
 const inquiry = () => {
+    const t = useTranslations();
     const [list, setList] = useState([]);
     const [page, setPage] = useState(1)
     const [limit, setLimit] = useState(50)
@@ -47,8 +48,8 @@ const inquiry = () => {
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">제목</th>
-                                    <th scope="col">작성일시</th>
+                                    <th scope="col">{t('title')}</th>
+                                    <th scope="col">{t('createdDate')}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -70,7 +71,7 @@ const inquiry = () => {
                             </table>
                             <div className="d-flex justify-content-end p-3">
                                 <Link href="/inquiry-write" className="btn btn-primary">
-                                    글쓰기
+                                    {t('writePost')}
                                 </Link>
                             </div>
                         </div>
@@ -85,7 +86,7 @@ const inquiry = () => {
                                     onClick={() => setPage(prev => prev - 1)}
                                     disabled={page === 1}
                                 >
-                                    {'이전'}
+                                    {t('prev')}
                                 </button>
                             </li>
 
@@ -100,7 +101,7 @@ const inquiry = () => {
                                     className="page-link"
                                     onClick={() => setPage(prev => prev + 1)}
                                 >
-                                    {'다음'}
+                                    {t('next')}
                                 </button>
                             </li>
                         </ul>

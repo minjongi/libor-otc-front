@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {useTranslations} from "next-intl";
 
 const Footer = () => {
-    // Define contact information data
+    const t = useTranslations();
     const contactInfo = [
         {
             id: 1,
@@ -26,26 +27,18 @@ const Footer = () => {
 
     // Define company links data
     const companyLinks = [
-        { id: 1, text: "간편 구매등록", href: "/services/regBuyCoin" },
-        { id: 2, text: "간편 판매등록", href: "/services/regSellCoin" },
-        { id: 3, text: "P2P 구매거래" , href: "/p2pTrade" },
-        { id: 4, text: "내역", href: "/pricing/matching" },
+        { id: 1, text: t('expressRegBuy'), href: "/services/regBuyCoin" },
+        { id: 2, text: t('expressRegSell'), href: "/services/regSellCoin" },
+        { id: 3, text: t('p2pTrading') , href: "/p2pTrade" },
+        { id: 4, text: t('transactionHistory'), href: "/pricing/matching" },
     ];
 
     // Define explore links data
     const exploreLinks = [
-        { id: 1, text: "공지사항", href: "/notice" },
-        { id: 2, text: "FAQ", href: "/faqs" },
-        { id: 3, text: "문의", href: "/inquiry" },
-        { id: 4, text: "Contact Us", href: "/contact-us" }
-    ];
-
-    // Define social media links data
-    const socialLinks = [
-        { id: 1, icon: "ri-facebook-fill", href: "https://www.facebook.com/" },
-        { id: 2, icon: "ri-twitter-x-line", href: "https://www.twitter.com/" },
-        { id: 3, icon: "ri-linkedin-fill", href: "https://www.linkedin.com/" },
-        { id: 4, icon: "ri-instagram-line", href: "https://www.instagram.com/" },
+        { id: 1, text: t('notice'), href: "/notice" },
+        { id: 2, text: t('faq'), href: "/faqs" },
+        { id: 3, text: t('inquiry'), href: "/inquiry" },
+        { id: 4, text: t('contact'), href: "/contact-us" }
     ];
 
     return (
@@ -72,16 +65,13 @@ const Footer = () => {
                                     />
                                 </div>
 
-                                <p>
-                                    Trusted by millions, Libor connects people worldwide with fast
-                                    and fair transfers.
-                                </p>
+                                <p>{t('footer_explain_1')}</p>
                             </div>
                         </div>
 
                         <div className="col-lg-3 col-sm-6">
                             <div className="footer-single-widget">
-                                <h3>Contact Info</h3>
+                                <h3>{t('footer_contactInfo')}</h3>
 
                                 <ul className="p-0 m-0 list-unstyled contact-list">
                                     {contactInfo.map((info) => (
@@ -109,7 +99,7 @@ const Footer = () => {
 
                         <div className="col-lg-3 col-sm-6">
                             <div className="footer-single-widget">
-                                <h3>Company</h3>
+                                <h3>{t('myPage')}</h3>
 
                                 <ul className="p-0 m-0 list-unstyled import-link">
                                     {companyLinks.map((link) => (
@@ -129,7 +119,7 @@ const Footer = () => {
 
                         <div className="col-lg-3 col-sm-6">
                             <div className="footer-single-widget">
-                                <h3>Explore</h3>
+                                <h3>{t('customerSupport')}</h3>
 
                                 <ul className="p-0 m-0 list-unstyled import-link">
                                     {exploreLinks.map((link) => (
