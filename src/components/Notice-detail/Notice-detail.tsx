@@ -4,9 +4,10 @@ import React, {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
 import {noticeDetail} from "@/utils/customerUtil";
 import Link from "next/link";
+import {useTranslations} from "next-intl";
 
 const NoticeDetailForm = () => {
-
+    const t = useTranslations();
     const params = useParams()
     const seq = params.seq
 
@@ -35,11 +36,11 @@ const NoticeDetailForm = () => {
                     <div className="row justify-content-center g-4">
                         <div className="col-lg-7">
                             <div className="contact-us-form mw-648">
-                                <h3>공지사항</h3>
+                                <h3>{t('notice')}</h3>
 
                                 <form>
                                     <div className="currency-input position-relative z-1">
-                                        <label>제목</label>
+                                        <label>{t('title')}</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -53,7 +54,7 @@ const NoticeDetailForm = () => {
                                     </div>
 
                                     <div className="currency-input position-relative z-1">
-                                        <label>공지일시</label>
+                                        <label>{t('noticeDate')}</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -67,7 +68,7 @@ const NoticeDetailForm = () => {
                                     </div>
 
                                     <div className="currency-input position-relative z-1">
-                                        <label>상세내용</label>
+                                        <label>{t('content')}</label>
                                         <textarea
                                             rows={5}
                                             className="form-control"
@@ -83,7 +84,7 @@ const NoticeDetailForm = () => {
 
                                     <div className="btn btn-secondary w-100">
                                         <Link href="/notice">
-                                            이전
+                                            {t('prev')}
                                         </Link>
                                     </div>
                                 </form>

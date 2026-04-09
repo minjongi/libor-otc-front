@@ -7,6 +7,9 @@ import Image from "next/image";
 import MobileMenuModal from "@/components/Layout/MobileMenuModal";
 // Menus data
 import { menusData } from "@/components/Layout/MenusData";
+import { getCookie, setCookie } from "cookies-next";
+import { useRouter } from "next/router";
+import {router} from "next/client";
 
 // Define menu item types
 type MenuItem = {
@@ -74,6 +77,12 @@ function Navbar() {
   const pathname = usePathname();
   const [isSticky, setIsSticky] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const locale = (getCookie("locale") as string) || "en";
+
+  function changeLocale(lang: string) {
+    setCookie("locale", lang, { path: "/" });
+    window.location.reload();
+  }
 
   // Sticky navbar effect
   useEffect(() => {
@@ -122,6 +131,21 @@ function Navbar() {
 
           {/* Others Options */}
           <div className="others-options d-flex align-items-center style-two">
+            <select
+                value={locale}
+                onChange={(e) => changeLocale(e.target.value)}
+                style={{
+                  padding: "6px 10px",
+                  borderRadius: "6px",
+                  border: "1px solid #ccc",
+                  background: "#fff",
+                }}
+            >
+              <option value="ko">한국</option>
+              <option value="en">영어</option>
+              <option value="ja">일본어</option>
+              <option value="zh">중국어</option>
+            </select>
             <div className="d-flex align-items-center info">
               <Link href="/login">로그인</Link>
             </div>

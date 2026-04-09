@@ -1,10 +1,11 @@
 import PageBanner from "@/components/Common/PageBanner";
 import FaqContent from "@/components/Faq/FaqContent";
-import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 import CommonFooter from "@/components/CommonFooter/CommonFooter";
+import {useTranslations} from "next-intl";
 
 export default function Page() {
+    const t = useTranslations();
     return (
         <>
             <Navbar/>

@@ -1,31 +1,32 @@
 'use client';
 
 import React, {useEffect, useState} from "react";
-import Link from "next/link";
 import {useRouter} from "next/navigation";
 import * as Yup from 'yup';
 import {Formik, Form, Field, ErrorMessage} from 'formik'
 import axios from 'axios'
 import {getUser, update} from "@/utils/authUtil";
+import {useTranslations} from "next-intl";
 
 const userProfile = () => {
+    const t = useTranslations();
     const router = useRouter()
 
     // const [user, setUser] = useState({});
 
     const validationSchema = Yup.object().shape({
         phone_number: Yup.string()
-            .matches(/^[0-9]+$/, '숫자만 입력 가능합니다.')
-            .required('연락처를 입력해주세요.'),
+            .matches(/^[0-9]+$/, t('numbersOnly'))
+            .required(t('validationContactNumber')),
         email: Yup.string()
-            .email('이메일 형식으로 입력해 주세요.')
-            .required('이메일을 입력해주세요.'),
+            .email(t('validationEmail'))
+            .required(t('validationEnterEmail')),
         bank_name: Yup.string()
-            .required('은행을 선택해 주세요.'),
+            .required(t('validationSelectBank')),
         bank_account: Yup.string()
-            .required('계좌번호를 입력해주세요.'),
+            .required(t('validationAccountNumber')),
         bank_account_name: Yup.string()
-            .required('예금주를 입력해주세요.'),
+            .required(t('validationEnterAccountHolder')),
 
     });
 
@@ -34,7 +35,7 @@ const userProfile = () => {
 
         if (result) {
             result.then(() => {
-                alert('수정되었습니다.');
+                alert(t('alertUpdate'));
             });
         }
     }
@@ -95,11 +96,11 @@ const userProfile = () => {
                                             height:"100%"
                                         }}
                                     >
-                                        <h4>회원정보</h4>
+                                        <h4>{t('accountInformation')}</h4>
 
                                         <div className="form-group">
                                             <div>
-                                                <label>아이디<span>*</span></label>
+                                                <label>{t('id')}<span>*</span></label>
                                                 <Field name="loginId" className="form-control"
                                                        disabled
                                                        value={user.loginId}
@@ -111,7 +112,7 @@ const userProfile = () => {
                                                 />
                                             </div>
                                             <div>
-                                                <label>이름<span>*</span></label>
+                                                <label>{t('name')}<span>*</span></label>
                                                 <Field name="name" className="form-control"
                                                        disabled
                                                        value={user.name}
@@ -125,7 +126,7 @@ const userProfile = () => {
                                         </div>
                                         <div className="form-group">
                                             <div>
-                                                <label>전화번호<span>*</span></label>
+                                                <label>{t('phoneNumber')}<span>*</span></label>
                                                 <Field name="phone_number" className="form-control"
                                                        style={{
                                                            height: '50px',
@@ -137,7 +138,7 @@ const userProfile = () => {
                                                               className="text-danger"/>
                                             </div>
                                             <div>
-                                                <label>이메일<span>*</span></label>
+                                                <label>{t('email')}<span>*</span></label>
                                                 <Field name="email" className="form-control"
                                                        style={{
                                                            height: '50px',
@@ -151,7 +152,7 @@ const userProfile = () => {
 
                                         <div className="form-group">
                                             <div>
-                                                <label>은행명<span>*</span>:</label>
+                                                <label>{t('bankName')}<span>*</span>:</label>
                                                 <Field as="select" name="bank_name" id="bank_name"
                                                        className="form-control"
                                                        style={{
@@ -162,37 +163,37 @@ const userProfile = () => {
                                                            width: '100%'
                                                        }}
                                                 >
-                                                    <option value="">은행 선택</option>
-                                                    <option value="039">경남</option>
-                                                    <option value="034">광주</option>
-                                                    <option value="031">대구</option>
-                                                    <option value="032">부산</option>
-                                                    <option value="064">산림조합</option>
-                                                    <option value="045">새마을금고</option>
-                                                    <option value="007">수협</option>
-                                                    <option value="088">신한</option>
-                                                    <option value="048">신협</option>
-                                                    <option value="020">우리</option>
-                                                    <option value="071">우체국</option>
-                                                    <option value="050">저축은행</option>
-                                                    <option value="037">전북</option>
-                                                    <option value="035">제주</option>
-                                                    <option value="090">카카오뱅크</option>
-                                                    <option value="089">케이뱅크</option>
-                                                    <option value="092">토스뱅크</option>
-                                                    <option value="081">하나</option>
-                                                    <option value="027">한국씨티</option>
-                                                    <option value="001">한국은행</option>
-                                                    <option value="003">IBK기업</option>
-                                                    <option value="004">KB국민</option>
-                                                    <option value="002">KDB산업</option>
-                                                    <option value="011">NH농협</option>
-                                                    <option value="023">SC제일</option>
+                                                    <option value="">{t('selectBank')}</option>
+                                                    <option value="039">{t('gyeongnam')}</option>
+                                                    <option value="034">{t('gwangju')}</option>
+                                                    <option value="031">{t('daegu')}</option>
+                                                    <option value="032">{t('busan')}</option>
+                                                    <option value="064">{t('forestryCooperative')}</option>
+                                                    <option value="045">{t('mg')}</option>
+                                                    <option value="007">{t('suhyup')}</option>
+                                                    <option value="088">{t('shinhan')}</option>
+                                                    <option value="048">{t('shinhyup')}</option>
+                                                    <option value="020">{t('woori')}</option>
+                                                    <option value="071">{t('korea Post')}</option>
+                                                    <option value="050">{t('savings Bank')}</option>
+                                                    <option value="037">{t('jeonbuk')}</option>
+                                                    <option value="035">{t('jeju')}</option>
+                                                    <option value="090">{t('kakaoBank')}</option>
+                                                    <option value="089">{t('kBank')}</option>
+                                                    <option value="092">{t('tossBank')}</option>
+                                                    <option value="081">{t('hana')}</option>
+                                                    <option value="027">{t('citibankKorea')}</option>
+                                                    <option value="001">{t('bankofKorea')}</option>
+                                                    <option value="003">{t('ibk')}</option>
+                                                    <option value="004">{t('KbBank')}</option>
+                                                    <option value="002">{t('kDB')}</option>
+                                                    <option value="011">{t('nh')}</option>
+                                                    <option value="023">{t('sc')}</option>
                                                 </Field>
                                                 <ErrorMessage name="bank_name" component="p" className="text-danger"/>
                                             </div>
                                             <div>
-                                                <label>계좌번호<span>*</span>:</label>
+                                                <label>{t('accountNumber')}<span>*</span>:</label>
                                                 <Field name="bank_account" className="form-control"
                                                        style={{
                                                            height: '50px',
@@ -206,7 +207,7 @@ const userProfile = () => {
                                         </div>
                                         <div className="form-group">
                                             <div>
-                                                <label>예금주<span>*</span>:</label>
+                                                <label>{t('accountHolder')}<span>*</span>:</label>
                                                 <Field name="bank_account_name" className="form-control"
                                                        style={{
                                                            height: '50px',
@@ -221,7 +222,7 @@ const userProfile = () => {
                                         </div>
                                         <button type="submit" className="btn btn-secondary w-100 mt-4" style={{
                                             marginTop: "auto"
-                                        }}>수정
+                                        }}>{t('edit')}
                                         </button>
                                     </Form>
                                 </div>

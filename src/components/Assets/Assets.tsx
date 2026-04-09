@@ -3,8 +3,10 @@
 import React, {useState, useEffect} from "react";
 import {getUserAssetInfo} from "@/utils/otcUtil";
 import Link from "next/link";
+import {useTranslations} from "next-intl";
 
 const Assets = () => {
+    const t = useTranslations();
     const [list, setList] = useState([])
     const [page , setPage] = useState(1)
     const [limit, setLimit] = useState(50)
@@ -40,9 +42,9 @@ const Assets = () => {
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">코인명</th>
-                                    <th scope="col">보유수량</th>
-                                    <th scope="col">평가금액</th>
+                                    <th scope="col">{t('coinName')}</th>
+                                    <th scope="col">{t('holdingQuantity')}</th>
+                                    <th scope="col">{t('estimatedValue')}</th>
 
                                 </tr>
                                 </thead>
@@ -85,7 +87,7 @@ const Assets = () => {
                                             onClick={() => setPage(prev => prev - 1)}
                                             disabled={page === 1}
                                         >
-                                            {'이전'}
+                                            {t('prev')}
                                         </button>
                                     </li>
 
@@ -100,7 +102,7 @@ const Assets = () => {
                                             className="page-link"
                                             onClick={() => setPage(prev => prev + 1)}
                                         >
-                                            {'다음'}
+                                            {t('next')}
                                         </button>
                                     </li>
                                 </ul>

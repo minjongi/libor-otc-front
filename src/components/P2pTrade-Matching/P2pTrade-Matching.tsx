@@ -1,11 +1,13 @@
 "use client";
 
 import React, {useState, useEffect} from "react";
-import {getOtcTransactionList, getOtcTransactionMatchingList} from "@/utils/otcUtil";
+import {getOtcTransactionMatchingList} from "@/utils/otcUtil";
 import Link from "next/link";
 import {usePathname, useRouter} from "next/navigation";
+import {useTranslations} from "next-intl";
 
 const P2pTradeMatching = () => {
+    const t = useTranslations();
     const router = useRouter()
     const pathname = usePathname();
     const [isLoading, setIsLoading] = useState(false);
@@ -38,7 +40,7 @@ const P2pTradeMatching = () => {
                           display: "inline-block"
                       }}
                 >
-                    {'상세보기'}
+                    {t('viewDetails')}
                 </Link>
             </span>
         );
@@ -53,21 +55,21 @@ const P2pTradeMatching = () => {
             return '';
         }
 
-        return (item.otcTransaction.type === 1) ? '구매' : '판매';
+        return (item.otcTransaction.type === 1) ? t('buy') : t('sell');
     }
 
     const statusTitle = (status: any) => {
         switch (status) {
             case 1:
-                return '대기';
+                return t('pending');
             case 2:
-                return '입금 완료';
+                return t('depositCompleted');
             case 3:
-                return '입금 확인';
+                return t('depositConfirmed');
             case 4:
-                return '완료';
+                return t('completed');
             case 5:
-                return '취소';
+                return t('cancel');
         }
     }
 
@@ -139,7 +141,7 @@ const P2pTradeMatching = () => {
                                     transition: "all 0.2s ease",
                                 }}
                             >
-                                매칭 내역
+                                {t('matchingHistory')}
                             </div>
 
                             <div
@@ -157,7 +159,7 @@ const P2pTradeMatching = () => {
                                     transition: "all 0.2s ease",
                                 }}
                             >
-                                주문 내역
+                                {t('orderHistory')}
                             </div>
                         </div>
                         <div className="exchange-table table-responsive">
@@ -165,12 +167,12 @@ const P2pTradeMatching = () => {
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">코인명</th>
-                                    <th scope="col">가격</th>
-                                    <th scope="col">남은수량</th>
-                                    <th scope="col">구분</th>
-                                    <th scope="col">상태</th>
-                                    <th scope="col">등록일시</th>
+                                    <th scope="col">{t('coinName')}</th>
+                                    <th scope="col">{t('price')}</th>
+                                    <th scope="col">{t('remainingQuantity')}</th>
+                                    <th scope="col">{t('type')}</th>
+                                    <th scope="col">{t('status')}</th>
+                                    <th scope="col">{t('registerdDate')}</th>
                                     <th scope="col"></th>
                                 </tr>
                                 </thead>
@@ -178,7 +180,7 @@ const P2pTradeMatching = () => {
                                 {!getBuyList.length && (
                                     <tr>
                                         <td className="center" colSpan={7}>
-                                            <span>{'데이터 없음'}</span>
+                                            <span>{t('noData')}</span>
                                         </td>
                                     </tr>
                                 )}
@@ -232,7 +234,7 @@ const P2pTradeMatching = () => {
                                             onClick={() => setPage(prev => prev - 1)}
                                             disabled={page === 1}
                                         >
-                                            {'이전'}
+                                            {t('prev')}
                                         </button>
                                     </li>
 
@@ -247,7 +249,7 @@ const P2pTradeMatching = () => {
                                             className="page-link"
                                             onClick={() => setPage(prev => prev + 1)}
                                         >
-                                            {'다음'}
+                                            {t('next')}
                                         </button>
                                     </li>
                                 </ul>

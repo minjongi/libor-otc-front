@@ -7,6 +7,8 @@ import Image from "next/image";
 import MobileMenuModal from "@/components/Layout/MobileMenuModal";
 // Menus data
 import { menusData } from "@/components/Layout/MenusData";
+import {getCookie, setCookie} from "cookies-next";
+import {useTranslations} from "use-intl";
 
 // Define menu item types
 type MenuItem = {
@@ -24,6 +26,8 @@ interface MenuItemsProps {
 
 // Recursive menu component (modern typing)
 function MenuItems({ items, pathname, level = 0 }: MenuItemsProps) {
+  const t = useTranslations();
+
   return (
     <ul className={level === 0 ? "navbar-nav m-auto" : "dropdown-menu"}>
       {items.map((item, index) => {
@@ -42,7 +46,7 @@ function MenuItems({ items, pathname, level = 0 }: MenuItemsProps) {
                 href="#"
                 onClick={(e) => e.preventDefault()}
               >
-                {item.title}
+                {t(item.title)}
               </Link>
               <MenuItems
                 items={item.dropdown}
@@ -60,7 +64,7 @@ function MenuItems({ items, pathname, level = 0 }: MenuItemsProps) {
                   isActive ? "active" : ""
                 }`}
               >
-                {item.title}
+                {t(item.title)}
               </Link>
             </li>
           );
@@ -74,6 +78,13 @@ function Navbar() {
   const pathname = usePathname();
   const [isSticky, setIsSticky] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const locale = (getCookie("locale") as string) || "en";
+
+  function changeLocale(lang: string) {
+    setCookie("locale", lang, { path: "/" });
+    window.location.reload();
+  }
+
 
   // Sticky navbar effect
   useEffect(() => {
@@ -98,6 +109,8 @@ function Navbar() {
   const mobileMenuHandleClose = () => setShowMobileMenu(false);
   const mobileMenuHandleShow = () => setShowMobileMenu(true);
 
+  const t = useTranslations();
+
   return (
     <>
       <nav
@@ -117,11 +130,26 @@ function Navbar() {
 
           {/* Others Options */}
           <div className="others-options d-flex align-items-center">
+            <select
+                value={locale}
+                onChange={(e) => changeLocale(e.target.value)}
+                style={{
+                  padding: "6px 10px",
+                  borderRadius: "6px",
+                  border: "1px solid #ccc",
+                  background: "#fff",
+                }}
+            >
+              <option value="ko">{t('ko')}</option>
+              <option value="en">{t('en')}</option>
+              <option value="ja">{t('ja')}</option>
+              <option value="zh">{t('cn')}</option>
+            </select>
             <div className="d-flex align-items-center info">
-              <Link href="/login">로그인</Link>
+              <Link href="/login">{t('logIn')}</Link>
             </div>
             <Link href="/register" className="btn d-none d-sm-inline-block">
-              회원가입
+              {t('signUp')}
             </Link>
             <button
               type="button"
