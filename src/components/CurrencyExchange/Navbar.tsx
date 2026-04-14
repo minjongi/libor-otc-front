@@ -138,10 +138,10 @@ function Navbar() {
                     background: "#fff",
                   }}
               >
-                <option value="ko">{t('ko')}</option>
-                <option value="en">{t('en')}</option>
-                <option value="ja">{t('ja')}</option>
-                <option value="zh">{t('cn')}</option>
+                <option value="ko">한국어</option>
+                <option value="en">English</option>
+                <option value="ja">日本語</option>
+                <option value="zh">中国人</option>
               </select>
 
               <div className="d-flex align-items-center info">
